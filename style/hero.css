@@ -1,0 +1,31 @@
+/* estilos de la carta de precentacion */
+.hero{
+    width: 100%;
+}
+
+.hero-card{
+    border-radius: 20px;
+    border-color: #707070;
+    border: 1px ;
+    background-color: #FFFFFF;
+    width: 30%;
+    height: auto;
+    padding: 25px;
+}
+.hero-card h3{
+    color: #707070;
+    text-align: center;
+}
+
+.hero-card p{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: #707070;
+    text-align: center;
+}
+
+/* estilos de la imagen del programador */
+
+.hero-img{
+    width: 30%;
+}
