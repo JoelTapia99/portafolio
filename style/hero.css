@@ -1,31 +1,33 @@
 /* estilos de la carta de precentacion */
-.hero{
-    width: 100%;
+.hero {
+  width: 100%;
 }
 
-.hero-card{
-    border-radius: 20px;
-    border-color: #707070;
-    border: 1px ;
-    background-color: #FFFFFF;
-    width: 30%;
-    height: auto;
-    padding: 25px;
+.hero-card {
+  /* display: inline-block; */
+  width: 25%;
+  height: 25%;
+  border-radius: 20px;
+  border: 1px solid #707070;
+  background-color: #ffffff;
+  padding: 25px;
 }
-.hero-card h3{
-    color: #707070;
-    text-align: center;
+.hero-card h3 {
+  color: #707070;
+  text-align: center;
 }
 
-.hero-card p{
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    color: #707070;
-    text-align: center;
+.hero-card p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: #707070;
+  text-align: center;
 }
 
 /* estilos de la imagen del programador */
 
-.hero-img{
-    width: 30%;
+.hero-img img {
+  width: 25%;
+  height: 25%;
+  display: inline-block;
 }

@@ -1,161 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Desarrollador web de Quito-Ecuador" />
+    <meta name="robots" content="index,follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- icono de la pagina -->
-    <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon" />
 
     <!-- estilos css -->
-    <link rel="stylesheet" href="./style/index.css">
-    <link rel="stylesheet" href="./style/navbar.css">
-    <link rel="stylesheet" href="./style/hero.css">
-    <link rel="stylesheet" href="./style/footer.css">
+    <link rel="stylesheet" href="./style/index.css" />
+    <link rel="stylesheet" href="./style/navbar.css" />
+    <link rel="stylesheet" href="./style/hero.css" />
+    <link rel="stylesheet" href="./style/footer.css" />
 
     <!-- fuente -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Portafolio</title>
-</head>
+  </head>
+  <body>
+    <!-- //////////////- navegacion -//////////////// -->
+    <header class="header">
+      <nav>
+        <ul>
+          <li><a href="">Inicio</a></li>
+          <li><a href="">Habilidades</a></li>
+          <li><a href="">Trabajos</a></li>
+          <li><a href="">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
 
-<body>
-
-    <div class="header">
-        <!-- //////////////////////////////////////////// -->
-        <!-- //////////////- navegacion -//////////////// -->
-        <!-- //////////////////////////////////////////// -->
-
-        <head>
-            <nav>
-                <ul>
-                    <li><a href="">Inicio</a></li>
-                    <li><a href="">Habilidades</a></li>
-                    <li><a href="">Trabajos</a></li>
-                    <li><a href="">Contacto</a></li>
-                </ul>
-            </nav>
-        </head>
-
-        <!-- //////////////////////////////////////////// -->
-        <!-- //////////////- hero -//////////////// -->
-        <!-- //////////////////////////////////////////// -->
+    <main>
+      <!-- //////////////- hero -//////////////// -->
+      <section class="header">
         <div class="hero">
-            <div class="hero-card">
-                <h3>
-                    &lt;h1&gt; Hola mundo &lt;/h1&gt;
-                </h3>
-                <p>Soy Joel, un desarrollador de software que le gusta aprender cosas nuevas, ganar experiencias y el
-                    trabajo colaborativo. Considero que gracias a mi formación puedo aportar valor y seguir
-                    desarrollándome como profesional.</p>
-            </div>
-            <div class="hero-img">
-                <img src="assets/hero.svg" alt="imagen de programador">
-            </div>
+          <div class="hero-card">
+            <h3>&lt;h1&gt; Hola mundo &lt;/h1&gt;</h3>
+            <p>
+              Soy Joel, un desarrollador de software que le gusta aprender cosas
+              nuevas, ganar experiencias y el trabajo colaborativo. Considero
+              que gracias a mi formación puedo aportar valor y seguir
+              desarrollándome como profesional.
+            </p>
+          </div>
+          <div class="hero-img">
+            <img src="assets/hero.svg" alt="imagen de programador" />
+          </div>
         </div>
-    </div>
+      </section>
 
-    <!-- //////////////////////////////////////////// -->
-    <!-- ///- boton de habilidades e inforamcion -/// -->
-    <!-- //////////////////////////////////////////// -->
+      <!-- ///- boton de habilidades e inforamcion -/// -->
 
-    <a href="">Habilidades e Información</a>
+      <a href="">Habilidades e Información</a>
 
-    <!-- //////////////////////////////////////////// -->
-    <!-- //////////////- Habilidades -/////////////// -->
-    <!-- //////////////////////////////////////////// -->
-    <div class="container-habilidades">
-        <div class="car-frontend">
-            <img src="assets/Fron-end.png" width="100px" height="100px" alt="imagen de frontend">
+      <!-- //////////////- Habilidades -/////////////// -->
+      <section>
+        <div class="container-habilidades">
+          <div class="car-frontend">
+            <img
+              src="assets/Fron-end.png"
+              width="100px"
+              height="100px"
+              alt="imagen de frontend"
+            />
             <h3>Front-end</h3>
-            <p>Tengo el conocimiento para desarrollar pantallas
-                con diseño responsive y me gusta ver como las
-                ideas cobran vida en el navegador. </p>
+            <p>
+              Tengo el conocimiento para desarrollar pantallas con diseño
+              responsive y me gusta ver como las ideas cobran vida en el
+              navegador.
+            </p>
             <ul>
-                <li>Angular</li>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>Bootstrap</li>
+              <li>Angular</li>
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>Bootstrap</li>
             </ul>
-        </div>
-        <div class="car-backend">
-            <img src="assets/back-end.png" width="100px" height="100px" alt="image de backend">
+          </div>
+          <div class="car-backend">
+            <img
+              src="assets/back-end.png"
+              width="100px"
+              height="100px"
+              alt="image de backend"
+            />
             <h3>Back-end</h3>
-            <p>Desarrollo de APIs para el consumo de cualquier
-                aplicación cliente conectándose a bases de datos
-                relacionales.</p>
+            <p>
+              Desarrollo de APIs para el consumo de cualquier aplicación cliente
+              conectándose a bases de datos relacionales.
+            </p>
             <ul>
-                <li>Laravel</li>
-                <li>Node.js</li>
-                <li>PostgreSQL</li>
-                <li>MySQL</li>
+              <li>Laravel</li>
+              <li>Node.js</li>
+              <li>PostgreSQL</li>
+              <li>MySQL</li>
             </ul>
-        </div>
-        <div class="card-otros">
-            <img src="assets/hero.svg" width="100px" height="100px" alt="imagen de otros">
+          </div>
+          <div class="card-otros">
+            <img
+              src="assets/hero.svg"
+              width="100px"
+              height="100px"
+              alt="imagen de otros"
+            />
             <h3>Back-end</h3>
-            <p>Habilidades como sistema de control de versiones,
-                consolas de línea de comandos y metodologías</p>
+            <p>
+              Habilidades como sistema de control de versiones, consolas de
+              línea de comandos y metodologías
+            </p>
             <ul>
-                <li>Git y GitHub</li>
-                <li>Terminal</li>
-                <li>Scrum</li>
-                <li>Kanban</li>
+              <li>Git y GitHub</li>
+              <li>Terminal</li>
+              <li>Scrum</li>
+              <li>Kanban</li>
             </ul>
+          </div>
         </div>
-    </div>
-
-    <!-- //////////////////////////////////////////// -->
-    <!-- ///////////////- Infomacion -/////////////// -->
-    <!-- //////////////////////////////////////////// -->
-    <div class="container-informacion">
-        <div class="car-miTrabajo">
+      </section>
+      
+      <!-- ///////////////- Infomacion -/////////////// -->
+      <section>
+        <div class="container-informacion">
+          <div class="car-miTrabajo">
             <h3>Mis trabajos</h3>
-            <p>Leer descripciones rápidas sobre los trabajos que he desarrollado o colaborado.</p>
-            <input type="button" value="Ver trabajos">
-        </div>
-        <div class="car-contactame">
+            <p>
+              Leer descripciones rápidas sobre los trabajos que he desarrollado
+              o colaborado.
+            </p>
+            <input type="button" value="Ver trabajos" />
+          </div>
+          <div class="car-contactame">
             <h3>Contactame</h3>
-            <p>Soy un desarrollador web de Quito-Ecuador. cualquier duda envíala a:</p>
+            <p>
+              Soy un desarrollador web de Quito-Ecuador. cualquier duda envíala
+              a:
+            </p>
             <p>joelts159@gmail.com</p>
-        </div>
-        <div class="car-curriculum">
+          </div>
+          <div class="car-curriculum">
             <h3>Mi curriculum</h3>
             <p>Solicitar acceso a mi curriculum en drive.</p>
-            <input type="button" value="Solicitar acceso.">
+            <input type="button" value="Solicitar acceso." />
+          </div>
         </div>
-    </div>
+      </section>
+    </main>
 
-    <!-- //////////////////////////////////////////// -->
     <!-- ////////////////- footbar -///////////////// -->
-    <!-- //////////////////////////////////////////// -->
     <footer>
-        <img src="assets/logo-claro-2.png" width="100px" height="100px" alt="imagen de otros">
-        <div class="container-redesSociales">
-            <h5>Mis redes sociales</h5>
-            <ul>
-                <li>
-                    <a href=""><img src="assets/Fron-end.png" width="50px" height="50px" alt="mi gmail de contacto"></a>
-                </li>
-                <li>
-                    <a href=""><img src="assets/Fron-end.png" width="50px" height="50px"
-                            alt="mi instagram de contacto"></a>
-                </li>
-                <li>
-                    <a href=""><img src="assets/Fron-end.png" width="50px" height="50px"
-                            alt="mi facebook de contacto"></a>
-                </li>
-                <li>
-                    <a href=""><img src="assets/Fron-end.png" width="50px" height="50px"
-                            alt="mi GitHub de contacto"></a>
-                </li>
-            </ul>
-        </div>
+      <img
+        src="assets/logo-claro-2.png"
+        width="100px"
+        height="100px"
+        alt="imagen de otros"
+      />
+      <div class="container-redesSociales">
+        <h5>Mis redes sociales</h5>
+        <ul>
+          <li>
+            <a href=""
+              ><img
+                src="assets/Fron-end.png"
+                width="50px"
+                height="50px"
+                alt="mi gmail de contacto"
+            /></a>
+          </li>
+          <li>
+            <a href=""
+              ><img
+                src="assets/Fron-end.png"
+                width="50px"
+                height="50px"
+                alt="mi instagram de contacto"
+            /></a>
+          </li>
+          <li>
+            <a href=""
+              ><img
+                src="assets/Fron-end.png"
+                width="50px"
+                height="50px"
+                alt="mi facebook de contacto"
+            /></a>
+          </li>
+          <li>
+            <a href=""
+              ><img
+                src="assets/Fron-end.png"
+                width="50px"
+                height="50px"
+                alt="mi GitHub de contacto"
+            /></a>
+          </li>
+        </ul>
+      </div>
     </footer>
-
-</body>
-
+  </body>
 </html>

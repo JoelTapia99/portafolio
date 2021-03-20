@@ -1,23 +1,23 @@
-nav{
-    justify-content: space-between; /*los elementos utilizan todo el ancho disponible*/
-    align-items: center;
-    height: 60px;
-    text-align: center;
-    box-shadow: 0 0 6px #000000;
+nav {
+  justify-content: space-between; /*los elementos utilizan todo el ancho disponible*/
+  align-items: center;
+  height: 60px;
+  text-align: center;
+  box-shadow: 0 0 6px #000000;
 }
 
-nav ul{
+nav ul {
   display: inline-block;
   list-style: none;
 }
 
-nav ul li{
+nav ul li {
   padding: 10px;
   margin-top: 7px;
   float: left;
 }
 
-nav ul li a{
+nav ul li a {
   padding: 4px;
   color: #ffffff;
   font-weight: bold;
@@ -25,6 +25,6 @@ nav ul li a{
   text-decoration: none;
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
   border-bottom: solid #ffffff;
 }
