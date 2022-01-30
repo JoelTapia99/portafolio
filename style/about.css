@@ -1,0 +1,52 @@
+.container-about {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.about-work,
+.about-me,
+.about-cv {
+    display: inline-block;
+    border: 2px solid var(--grey);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 20px;
+    text-align: center;
+    color: var(--dark);
+    width: 25%;
+}
+
+.title-of-about {
+    margin: 0.5rem 0;
+}
+
+.title-of-paragraph {
+    margin: 1rem;
+}
+
+.my-linkedIn {
+    cursor: pointer;
+}
+
+.my-linkedIn a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 500;
+    font-weight: bolder;
+    color: var(--dark);
+    text-decoration: none;
+}
+
+.my-linkedIn a:hover {
+    color: var(--primary);
+}
+
+.my-linkedIn a img {
+    width: 30px;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    align-items: center;
+}

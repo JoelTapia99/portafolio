@@ -1,33 +1,77 @@
-/* estilos de la carta de precentacion */
+/* section */
+
+.container-hero {
+    background: -webkit-linear-gradient( to right, #4a00e0, #8e2de2);
+    background: linear-gradient( to right, #4a00e0, #8e2de2);
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* div */
+
 .hero {
-  width: 100%;
+    display: flex;
+    height: 100%;
+    width: 80%;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
 }
 
 .hero-card {
-  /* display: inline-block; */
-  width: 25%;
-  height: 25%;
-  border-radius: 20px;
-  border: 1px solid #707070;
-  background-color: #ffffff;
-  padding: 25px;
-}
-.hero-card h3 {
-  color: #707070;
-  text-align: center;
+    border-radius: 20px;
+    background-color: var(--white);
+    border: 1px solid var(--grey);
+    height: auto;
+    padding: 0.5rem;
+    width: 45%;
 }
 
-.hero-card p {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  color: #707070;
-  text-align: center;
+.hero-card-title {
+    color: #707070;
+    margin: 1rem 0;
+    text-align: center;
 }
 
-/* estilos de la imagen del programador */
+.hero-card-paragraph {
+    padding: 0 1rem;
+    padding-bottom: 1.3rem;
+    color: #707070;
+    text-align: center;
+}
 
-.hero-img img {
-  width: 25%;
-  height: 25%;
-  display: inline-block;
+.hero-img {
+    height: 75%;
+}
+
+
+/* gran boton */
+
+.container-big-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.big-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-decoration: none;
+    background-color: var(--white);
+    border: 2px solid var(--grey);
+    border-radius: 20px;
+    color: var(--grey);
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.big-btn img {
+    width: 3.3rem;
+    margin-left: 1rem;
 }

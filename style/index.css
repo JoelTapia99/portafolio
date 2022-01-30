@@ -1,28 +1,50 @@
+:root {
+    --primary: #4D02E0;
+    --second: #8D2CE2;
+    --grey: #707070;
+    --white: #f8f9fa;
+    --dark: #212529;
+}
+
 * {
-  padding: 0;
-  margin: 0;
-  font-family: "Rubik", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
 }
 
 body {
-  background-color: #ffffff;
+    background-color: var(--white);
 }
 
-/* estilos del contendero de hero y navbar */
 
-.header {
-  background: #8e2de2; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #4a00e0,
-    #8e2de2
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #4a00e0,
-    #8e2de2
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* botones */
 
-  height: auto;
-  width: auto;
+.button {
+    background-color: var(--primary);
+    border-radius: 5px;
+    border: 1px solid var(--primary);
+    color: var(--white);
+    display: inline-block;
+    font-size: large;
+    text-decoration: none;
+}
+
+.mrg-2 {
+    margin: 2rem;
+}
+
+.pd-t-05 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.pd-b-23 {
+    padding-left: 2.3rem;
+    padding-right: 2.3rem;
+}
+
+.pd-b-1 {
+    padding-left: 1rem;
+    padding-right: 1rem
 }

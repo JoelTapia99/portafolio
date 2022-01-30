@@ -1,0 +1,55 @@
+.container-habilidades {
+    border-radius: 20px;
+    margin: 5rem;
+    /* padding: 2rem; */
+    border: 2px solid var(--grey);
+}
+
+.container-habilidades div:nth-child(-n+2) {
+    border-right: 2px solid var(--grey);
+}
+
+.section-frontend,
+.section-backend,
+.section-others {
+    display: inline-block;
+    width: 33%;
+    height: 100%;
+    text-align: center;
+}
+
+.skill-title {
+    color: var(--dark);
+    margin: 1rem;
+}
+
+.skill-paragraph {
+    color: var(--dark);
+    margin: 0 1rem;
+    margin-bottom: 1rem;
+}
+
+.skills-list {
+    text-align: start;
+    margin-bottom: 1rem;
+}
+
+.skills-list li {
+    margin-left: 3rem;
+}
+
+.skill-image {
+    height: 5rem;
+    margin: 1rem;
+}
+
+.other-skill-image {
+    color: var(--second);
+    font-size: 5rem;
+}
+
+
+/* .skill-img-conteiner {
+    width: 20%;
+    height: 20%;
+} */

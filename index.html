@@ -1,187 +1,171 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="Desarrollador web de Quito-Ecuador" />
     <meta name="robots" content="index,follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- icono de la pagina -->
-    <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon" />
+    <link rel="shortcut icon" href="assets/tecla-4.png" type="image/x-icon" />
 
     <!-- estilos css -->
     <link rel="stylesheet" href="./style/index.css" />
     <link rel="stylesheet" href="./style/navbar.css" />
     <link rel="stylesheet" href="./style/hero.css" />
+    <link rel="stylesheet" href="./style/abilities.css" />
+    <link rel="stylesheet" href="./style/about.css" />
     <link rel="stylesheet" href="./style/footer.css" />
 
     <!-- fuente -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" rel="stylesheet" />
 
     <!-- iconos -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
-      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous" />
 
     <title>Portafolio</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- //////////////- navegacion -//////////////// -->
     <header class="header">
-      <nav>
-        <ul>
-          <li><a href="">Inicio</a></li>
-          <li><a href="">Habilidades</a></li>
-          <li><a href="">Trabajos</a></li>
-          <li><a href="">Contacto</a></li>
-        </ul>
-      </nav>
+        <nav class="navbar">
+            <ul>
+                <li class="links"><a href="">Inicio</a></li>
+                <li class="links"><a href="">Habilidades</a></li>
+                <li class="links"><a href="">Trabajos</a></li>
+                <li class="links"><a href="">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
-      <!-- //////////////- hero -//////////////// -->
-      <section class="header">
+    <!-- //////////////- hero -//////////////// -->
+    <section class="container-hero">
         <div class="hero">
-          <div class="hero-card">
-            <h3>&lt;h1&gt; Hola mundo &lt;/h1&gt;</h3>
-            <p>
-              Soy Joel, un desarrollador de software que le gusta aprender cosas
-              nuevas, ganar experiencias y el trabajo colaborativo. Considero
-              que gracias a mi formación puedo aportar valor y seguir
-              desarrollándome como profesional.
-            </p>
-          </div>
-          <div class="hero-img">
-            <img src="assets/hero.svg" alt="imagen de programador" />
-          </div>
+            <div class="hero-card">
+                <h3 class="hero-card-title">&lt;h1&gt; Hola mundo &lt;/h1&gt;</h3>
+                <p class="hero-card-paragraph">
+                    Soy Joel, un desarrollador de software que le gusta aprender cosas nuevas, ganar experiencias y el trabajo colaborativo. Considero que gracias a mi formación puedo aportar valor y seguir desarrollándome como profesional.
+                </p>
+                <a class="button mrg-2 pd-t-05 pd-b-23" role="button" href="#">Mi curriculum</a>
+            </div>
+            <!-- <div class="hero-img"> -->
+            <img class="hero-img" src="assets/hero.svg" alt="imagen de programador" />
+            <!-- </div> -->
         </div>
-      </section>
+    </section>
 
-      <!-- ///- boton de habilidades e inforamcion -/// -->
+    <div class="container-big-btn">
+        <a class="big-btn" href="">Habilidades e Información
+            <img src="assets/icons/down.png" alt="down icon">
+        </a>
+    </div>
 
-      <a href="">Habilidades e Información</a>
-
-      <!-- //////////////- Habilidades -/////////////// -->
-      <section>
-        <div class="container-habilidades">
-          <div class="car-frontend">
-            <img
-              src="assets/Fron-end.png"
-              width="100px"
-              height="100px"
-              alt="imagen de frontend"
-            />
-            <h3>Front-end</h3>
-            <p>
-              Tengo el conocimiento para desarrollar pantallas con diseño
-              responsive y me gusta ver como las ideas cobran vida en el
-              navegador.
+    <!-- //////////////- Habilidades -/////////////// -->
+    <section class="container-habilidades">
+        <div class="section-frontend">
+            <img class="skill-image" src="assets/icons/FronEnd.svg" alt="imagen de frontend" />
+            <h3 class="skill-title">Front-end</h3>
+            <p class="skill-paragraph">
+                Conocimiento en desarrollo pantallas con diseño responsive y me gusta ver como las ideas cobran vida en el navegador.
             </p>
-            <ul>
-              <li>Angular</li>
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>Bootstrap</li>
+            <ul class="skills-list">
+                <li>Angular</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>Bootstrap</li>
             </ul>
-          </div>
-          <div class="car-backend">
-            <img
-              src="assets/back-end.png"
-              width="100px"
-              height="100px"
-              alt="image de backend"
-            />
-            <h3>Back-end</h3>
-            <p>
-              Desarrollo de APIs para el consumo de cualquier aplicación cliente
-              conectándose a bases de datos relacionales.
-            </p>
-            <ul>
-              <li>Laravel</li>
-              <li>Node.js</li>
-              <li>PostgreSQL</li>
-              <li>MySQL</li>
-            </ul>
-          </div>
-          <div class="card-otros">
-            <img
-              src="assets/hero.svg"
-              width="100px"
-              height="100px"
-              alt="imagen de otros"
-            />
-            <h3>Back-end</h3>
-            <p>
-              Habilidades como sistema de control de versiones, consolas de
-              línea de comandos y metodologías
-            </p>
-            <ul>
-              <li>Git y GitHub</li>
-              <li>Terminal</li>
-              <li>Scrum</li>
-              <li>Kanban</li>
-            </ul>
-          </div>
         </div>
-      </section>
-
-      <!-- ///////////////- Infomacion -/////////////// -->
-      <section>
-        <div class="container-informacion">
-          <div class="car-miTrabajo">
-            <h3>Mis trabajos</h3>
-            <p>
-              Leer descripciones rápidas sobre los trabajos que he desarrollado
-              o colaborado.
+        <div class="section-backend">
+            <img class="skill-image" src="assets/icons/back-end.svg" alt="image de backend" />
+            <h3 class="skill-title">Back-end</h3>
+            <p class="skill-paragraph">
+                Desarrollo de APIs para el consumo de cualquier aplicación cliente conectándose a bases de datos relacionales.
             </p>
-            <input type="button" value="Ver trabajos" />
-          </div>
-          <div class="car-contactame">
-            <h3>Contactame</h3>
-            <p>
-              Soy un desarrollador web de Quito-Ecuador. cualquier duda envíala
-              a:
-            </p>
-            <p>joelts159@gmail.com</p>
-          </div>
-          <div class="car-curriculum">
-            <h3>Mi curriculum</h3>
-            <p>Solicitar acceso a mi curriculum en drive.</p>
-            <input type="button" value="Solicitar acceso." />
-          </div>
+            <ul class="skills-list">
+                <li>Laravel</li>
+                <li>Node.js</li>
+                <li>PostgreSQL</li>
+                <li>MySQL</li>
+            </ul>
         </div>
-      </section>
-    </main>
+        <div class="section-others">
+            <p class="other-skill-image">&lt;/&gt;</p>
+            <h3 class="skill-title">Otros</h3>
+            <p class="skill-paragraph">
+                Habilidades como sistema de control de versiones, consolas de línea de comandos y metodologías
+            </p>
+            <ul class="skills-list">
+                <li>Git y GitHub</li>
+                <li>Terminal</li>
+                <li>Scrum</li>
+                <li>Kanban</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ///////////////- Infomacion -/////////////// -->
+    <section class="container-about">
+        <!-- <div class="about-work">
+            <h3 class="title-of-about">Mis trabajos</h3>
+            <p class="title-of-paragraph">
+                Leer descripciones rápidas sobre los trabajos que he desarrollado o colaborado.
+            </p>
+            <input class="hero-button" type="button" value="Ver trabajos" />
+        </div> -->
+        <div class="about-me">
+            <h3 class="title-of-about">Contactame</h3>
+            <p class="title-of-paragraph">
+                Soy Joel un desarrollador web de Quito-Ecuador:
+            </p>
+            <div class="my-linkedIn">
+                <a href="#">
+                    <img class="test" src="assets/socialNetworks/LinkedIn-Original.svg" alt="LinkedIn"> Joel Tapia
+                </a>
+            </div>
+        </div>
+        <div class="about-cv">
+            <h3 class="title-of-about">Mi curriculum</h3>
+            <p class="title-of-paragraph">Solicitar acceso a mi curriculum en drive.</p>
+            <input class="button pd-t-05 pd-b-1" type="button" value="Solicitar acceso." />
+        </div>
+    </section>
+
 
     <!-- ////////////////- footbar -///////////////// -->
-    <footer>
-      <img
-        src="assets/logo-claro-2.png"
-        width="100px"
-        height="100px"
-        alt="imagen de otros"
-      />
-      <div class="container-redesSociales">
-        <h5>Mis redes sociales</h5>
-        <ul>
-          <li>
-            <i class="fab fa-instagram"></i>
-          </li>
-          <li>
-            <i class="fab fa-facebook-square"></i>
-          </li>
-          <li>
-            <i class="fab fa-github"></i>
-          </li>
-        </ul>
-      </div>
+    <footer class="footer">
+        <a class="footer-btn" href="#">Volver arriba</a>
+        <div class="footer-container">
+            <div class="briefcase">
+                <h2>Creado por:</h2>
+                <a href="#">Joel Tapia</a>
+            </div>
+
+            <div class="socialNetworks">
+                <h4>Mis redes sociales</h4>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="assets/socialNetworks/Instagram-Negative.svg" alt="Instagram">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="assets/socialNetworks/Github-Negative.svg" alt="Github">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="assets/socialNetworks/LinkedIn-Negative.svg" alt="LinkedIn">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </footer>
-  </body>
+
+</body>
+
 </html>
