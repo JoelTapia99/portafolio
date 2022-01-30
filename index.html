@@ -8,7 +8,7 @@
     <meta name="robots" content="index,follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- icono de la pagina -->
-    <link rel="shortcut icon" href="assets/tecla-4.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="assets/icons/favicon.png" type="image/x-icon" />
 
     <!-- estilos css -->
     <link rel="stylesheet" href="./style/index.css" />
@@ -32,17 +32,16 @@
     <!-- //////////////- navegacion -//////////////// -->
     <header class="header">
         <nav class="navbar">
+            <img src="./assets/icons/favicon.png" alt="logo de Joel Tapia desarrollador">
             <ul>
-                <li class="links"><a href="">Inicio</a></li>
-                <li class="links"><a href="">Habilidades</a></li>
-                <li class="links"><a href="">Trabajos</a></li>
-                <li class="links"><a href="">Contacto</a></li>
+                <li class="links"><a href="#abilities">Habilidades</a></li>
+                <li class="links"><a href="#about_me">Acerca de mi</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- //////////////- hero -//////////////// -->
-    <section class="container-hero">
+    <section id="hero" class="container-hero">
         <div class="hero">
             <div class="hero-card">
                 <h3 class="hero-card-title">&lt;h1&gt; Hola mundo &lt;/h1&gt;</h3>
@@ -64,7 +63,7 @@
     </div>
 
     <!-- //////////////- Habilidades -/////////////// -->
-    <section class="container-habilidades">
+    <section id="abilities" class="container-habilidades">
         <div class="section-frontend">
             <img class="skill-image" src="assets/icons/FronEnd.svg" alt="imagen de frontend" />
             <h3 class="skill-title">Front-end</h3>
@@ -107,7 +106,7 @@
     </section>
 
     <!-- ///////////////- Infomacion -/////////////// -->
-    <section class="container-about">
+    <section id="about_me" class="container-about">
         <!-- <div class="about-work">
             <h3 class="title-of-about">Mis trabajos</h3>
             <p class="title-of-paragraph">
@@ -136,7 +135,7 @@
 
     <!-- ////////////////- footbar -///////////////// -->
     <footer class="footer">
-        <a class="footer-btn" href="#">Volver arriba</a>
+        <a class="footer-btn" href="#hero">Volver arriba</a>
         <div class="footer-container">
             <div class="briefcase">
                 <h2>Creado por:</h2>
