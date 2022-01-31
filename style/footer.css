@@ -8,9 +8,15 @@ footer {
     padding: 0.7rem;
     color: var(--white);
     text-align: center;
+    font-size: 1.1rem;
     text-decoration: none;
     display: inline-block;
+    font-size: 700;
     width: 100%;
+}
+
+.footer-btn:hover {
+    background-color: var(--dark);
 }
 
 .footer-container {

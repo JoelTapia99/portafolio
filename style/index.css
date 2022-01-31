@@ -28,6 +28,13 @@ body {
     display: inline-block;
     font-size: large;
     text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    /* background-color: var(--dark); */
+    border: 1px solid var(--dark);
+    background-color: var(--dark);
 }
 
 .mrg-2 {
@@ -47,4 +54,21 @@ body {
 .pd-b-1 {
     padding-left: 1rem;
     padding-right: 1rem
+}
+
+
+/* first-section */
+
+.first-section {
+    width: 100%;
+    height: 100vh;
+}
+
+.second-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(240, 240, 240, 0.863);
 }

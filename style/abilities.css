@@ -1,7 +1,6 @@
 .container-habilidades {
     border-radius: 20px;
-    margin: 5rem;
-    /* padding: 2rem; */
+    margin: 1rem 5rem;
     border: 2px solid var(--grey);
 }
 
@@ -47,9 +46,3 @@
     color: var(--second);
     font-size: 5rem;
 }
-
-
-/* .skill-img-conteiner {
-    width: 20%;
-    height: 20%;
-} */
