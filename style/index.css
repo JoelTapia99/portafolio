@@ -1,6 +1,23 @@
+/* 
+cl = color
+rs = resolution
+*/
+
 :root {
-    --primary: #4D02E0;
-    --second: #8D2CE2;
+    --cl-primary: #4d02e0;
+    --cl-second: #8d2ce2;
+    --cl-grey: #707070;
+    --cl-white: #f8f9fa;
+    --cl-white-100: #f0f0f0;
+    --cl-dark: #212529;
+    --rs-super-small: 176px;
+    --rs-small: 576px;
+    --rs-medium: 768px;
+    --rs-large: 992px;
+    --rs-extra-large: 1200px;
+    --rs-super-large: 1400px;
+    --primary: #4d02e0;
+    --second: #8d2ce2;
     --grey: #707070;
     --white: #f8f9fa;
     --dark: #212529;
@@ -52,7 +69,7 @@ body {
 
 .pd-b-1 {
     padding-left: 1rem;
-    padding-right: 1rem
+    padding-right: 1rem;
 }
 
 
@@ -69,5 +86,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(240, 240, 240, 0.863);
+    /* background-color: rgba(240, 240, 240, 0.863); */
+    background-color: #f0f0f0;
 }
