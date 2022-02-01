@@ -43,11 +43,11 @@
 }
 
 .skill-image {
-    height: 5rem;
+    height: 4rem;
     margin: 1rem;
 }
 
 .other-skill-image {
     color: var(--second);
-    font-size: 5rem;
+    font-size: 4rem;
 }

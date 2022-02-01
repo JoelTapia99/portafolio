@@ -26,13 +26,12 @@ body {
     border: 1px solid var(--primary);
     color: var(--white);
     display: inline-block;
-    font-size: large;
+    /* font-size: large; */
     text-decoration: none;
     cursor: pointer;
 }
 
 .button:hover {
-    /* background-color: var(--dark); */
     border: 1px solid var(--dark);
     background-color: var(--dark);
 }

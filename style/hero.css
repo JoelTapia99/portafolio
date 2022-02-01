@@ -29,7 +29,8 @@
     background-color: var(--white);
     border: 1px solid var(--grey);
     padding: 0.5rem;
-    width: 35%;
+    width: 30rem;
+    max-height: 20rem;
     /* max-height: 0%; */
     text-align: center;
 }
@@ -46,7 +47,7 @@
 }
 
 .hero-img {
-    height: 75%;
+    height: 20rem;
 }
 
 
