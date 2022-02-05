@@ -33,12 +33,20 @@
     <header class="header">
         <nav class="navbar">
             <a href="#hero">
-                <img src="./assets/icons/favicon.png" alt="logo de Joel Tapia desarrollador">
+                <img src="./assets/icons/favicon.png" alt="Logo de Joel Tapia, el desarrollador">
             </a>
-            <ul>
-                <li class="links"><a href="#abilities">Habilidades</a></li>
-                <li class="links"><a href="#socialNetworks">Redes Sociales</a></li>
-            </ul>
+
+            <input type="checkbox" id="check">
+            <label for="check" class="expand-btn">
+                <img class="expand-img" src="./assets/icons/expand-navbar-icon.svg"
+                    alt="Icono para extender o ampliar la navbar">
+            </label>
+            <div class="navigation">
+                <ul>
+                    <li class="links"><a href="#abilities">Habilidades</a></li>
+                    <li class="links"><a href="#socialNetworks">Redes Sociales</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -55,85 +63,85 @@
             <img class="hero-img" src="assets/hero.svg" alt="imagen de programador" />
         </section>
 
-        <div class="container-big-btn">
-            <a class="big-btn" href="#abilities">Habilidades e Información
-                <img class="big-btn-img" src="assets/icons/down.svg" alt="down icon">
-            </a>
-        </div>
+        <!-- <div class="container-big-btn"> -->
+        <a class="big-btn" href="#abilities">Habilidades e Información
+            <img class="big-btn-img" src="assets/icons/down.svg" alt="down icon">
+        </a>
+        <!-- </div> -->
     </div>
 
     <!-- //////////////- Habilidades e Infomacion -/////////////// -->
     <div id="abilities" class="second-section">
-        <div>
-            <section class="container-habilidades">
-                <div class="section-frontend">
-                    <img class="skill-image" src="assets/icons/FronEnd.svg" alt="imagen de frontend" />
-                    <h3 class="skill-title">Front-end</h3>
-                    <p class="skill-paragraph">
-                        Conocimiento en desarrollo pantallas con diseño responsive y me gusta ver como las ideas cobran vida en el navegador.
-                    </p>
-                    <ul class="skills-list">
-                        <li>Angular</li>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>Bootstrap</li>
-                    </ul>
-                </div>
-                <div class="section-backend">
-                    <img class="skill-image" src="assets/icons/back-end.svg" alt="image de backend" />
-                    <h3 class="skill-title">Back-end</h3>
-                    <p class="skill-paragraph">
-                        Desarrollo de APIs para el consumo de cualquier aplicación cliente conectándose a bases de datos relacionales.
-                    </p>
-                    <ul class="skills-list">
-                        <li>Laravel</li>
-                        <li>Node.js</li>
-                        <li>PostgreSQL</li>
-                        <li>MySQL</li>
-                    </ul>
-                </div>
-                <div class="section-others">
-                    <p class="other-skill-image">&lt;/&gt;</p>
-                    <h3 class="skill-title">Otros</h3>
-                    <p class="skill-paragraph">
-                        Habilidades como sistema de control de versiones, consolas de línea de comandos y metodologías
-                    </p>
-                    <ul class="skills-list">
-                        <li>Git y GitHub</li>
-                        <li>Terminal</li>
-                        <li>Scrum</li>
-                        <li>Kanban</li>
-                    </ul>
-                </div>
-            </section>
+        <!-- <div> -->
+        <section class="container-habilidades">
+            <div class="section-frontend">
+                <img class="skill-image" src="assets/icons/FronEnd.svg" alt="imagen de frontend" />
+                <h3 class="skill-title">Front-end</h3>
+                <p class="skill-paragraph">
+                    Desarrollo de interfaces con diseño responsive, y desarollo de aplicaciones
+                </p>
+                <ul class="skills-list">
+                    <li>Angular</li>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>Bootstrap</li>
+                </ul>
+            </div>
+            <div class="section-backend">
+                <img class="skill-image" src="assets/icons/back-end.svg" alt="image de backend" />
+                <h3 class="skill-title">Back-end</h3>
+                <p class="skill-paragraph">
+                    Desarrollo de APIs para el consumo de cualquier aplicación cliente conectándose a bases de datos relacionales.
+                </p>
+                <ul class="skills-list">
+                    <li>Laravel</li>
+                    <li>Node.js</li>
+                    <li>PostgreSQL</li>
+                    <li>MySQL</li>
+                </ul>
+            </div>
+            <div class="section-others">
+                <p class="other-skill-image">&lt;/&gt;</p>
+                <h3 class="skill-title">Otros</h3>
+                <p class="skill-paragraph">
+                    Habilidades como sistema de control de versiones, consolas de línea de comandos y metodologías
+                </p>
+                <ul class="skills-list">
+                    <li>Git y GitHub</li>
+                    <li>Terminal</li>
+                    <li>Scrum</li>
+                    <li>Kanban</li>
+                </ul>
+            </div>
+        </section>
 
 
-            <section id="about_me" class="container-about">
-                <!-- <div class="about-work">
+        <section id="about_me" class="container-about">
+            <!-- <div class="about-work">
                 <h3 class="title-of-about">Mis trabajos</h3>
                 <p class="title-of-paragraph">
                     Leer descripciones rápidas sobre los trabajos que he desarrollado o colaborado.
                 </p>
                 <input class="hero-button" type="button" value="Ver trabajos" />
             </div> -->
-                <div class="about-me">
-                    <h3 class="title-of-about">Contactame</h3>
-                    <p class="title-of-paragraph">
-                        Soy Joel un desarrollador web de Quito-Ecuador:
-                    </p>
-                    <div class="my-linkedIn">
-                        <a href="#">
-                            <img class="test" src="assets/socialNetworks/LinkedIn-Original.svg" alt="LinkedIn"> Joel Tapia
-                        </a>
-                    </div>
+            <div class="about-me">
+                <h3 class="title-of-about">Contactame</h3>
+                <p class="title-of-paragraph">
+                    Soy Joel un desarrollador web de Quito-Ecuador:
+                </p>
+                <div class="my-linkedIn">
+                    <a href="https://www.linkedin.com/in/joel-tapia-8a94161b3/">
+                        <img src="assets/socialNetworks/LinkedIn-Original.svg" alt="LinkedIn"> Joel Tapia
+                    </a>
                 </div>
-                <div class="about-cv">
-                    <h3 class="title-of-about">Mi curriculum</h3>
-                    <p class="title-of-paragraph">Solicitar acceso a mi curriculum en drive.</p>
-                    <input class="button pd-t-05 pd-b-1" type="button" value="Solicitar acceso." />
-                </div>
-            </section>
-        </div>
+            </div>
+            <div class="about-cv">
+                <h3 class="title-of-about">Mi curriculum</h3>
+                <p class="title-of-paragraph">Solicitar acceso a mi curriculum en drive.</p>
+                <input class="button pd-t-05 pd-b-1" type="button" value="Solicitar acceso." />
+            </div>
+        </section>
+        <!-- </div> -->
     </div>
 
 

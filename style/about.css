@@ -12,7 +12,6 @@
 .about-cv {
     border: 2px solid var(--grey);
     padding: 0.7rem;
-    margin: 0.5rem;
     border-radius: 20px;
     text-align: center;
     color: var(--dark);
@@ -51,4 +50,55 @@
     margin: 0 0.5rem;
     text-decoration: none;
     align-items: center;
+}
+
+@media screen and (max-width: 992px) {
+    .about-work,
+    .about-me,
+    .about-cv {
+        padding: 0.5rem;
+        border-radius: 12px;
+        width: 17rem;
+    }
+    .container-about {
+        margin: 0.5rem 3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-work,
+    .about-me,
+    .about-cv {
+        border: 2px solid var(--grey);
+        padding: 0.7rem;
+        margin: 0.5rem;
+        border-radius: 10px;
+        text-align: center;
+        color: var(--dark);
+        width: 20rem;
+    }
+    .title-of-about {
+        font-size: 1rem;
+    }
+    .title-of-paragraph {
+        font-size: 0.755rem;
+    }
+    .my-linkedIn a {
+        font-size: 0.85rem;
+    }
+    .my-linkedIn a img {
+        width: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container-about {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-work,
+    .about-me,
+    .about-cv {
+        width: auto;
+    }
 }

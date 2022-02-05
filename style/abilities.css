@@ -1,22 +1,19 @@
 .container-habilidades {
     border-radius: 20px;
     margin: 1rem 5rem;
+    margin-top: calc(1rem + 0.8vh);
     border: 2px solid var(--grey);
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
 }
 
-.container-habilidades div:nth-child(-n+2) {
+.container-habilidades div:nth-child(-n + 2) {
     border-right: 2px solid var(--grey);
 }
 
 .section-frontend,
 .section-backend,
 .section-others {
-    /* display: inline-block; */
     width: 33%;
     height: 100%;
     text-align: center;
@@ -50,4 +47,77 @@
 .other-skill-image {
     color: var(--second);
     font-size: 4rem;
+}
+
+@media screen and (max-width: 992px) {
+    .container-habilidades {
+        border-radius: 12px;
+        margin: 0.5rem 3rem;
+    }
+    .skills-list {
+        font-size: 0.8rem;
+    }
+    .skill-paragraph {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container-habilidades {
+        border-radius: 10px;
+        margin: 0.3rem 1rem;
+    }
+    .skill-title {
+        font-size: 1rem;
+    }
+    .skills-list {
+        font-size: 0.8rem;
+    }
+    .skill-paragraph {
+        font-size: 0.755em;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .container-habilidades {
+        flex-direction: column;
+        align-items: center;
+    }
+    .second-setion {
+        width: auto;
+    }
+    .container-habilidades div:nth-child(-n + 2) {
+        border-right: none;
+        border-bottom: 2px solid var(--grey);
+    }
+    .section-frontend,
+    .section-backend,
+    .section-others {
+        width: 100%;
+        height: 200px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: stretch;
+        align-content: center;
+    }
+    .skill-title {
+        grid-column: 1 / 1;
+        grid-row: 1;
+    }
+    .skill-image {
+        grid-column: 1 / 2;
+        grid-row: 2;
+        height: 4rem;
+    }
+    .skill-paragraph {
+        display: none;
+    }
+    .skills-list {
+        grid-column: 2 / 2;
+        grid-row: 2;
+    }
+    .other-skill-image {
+        grid-column: 1 / 2;
+        grid-row: 2;
+    }
 }
