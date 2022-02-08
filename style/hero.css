@@ -101,21 +101,37 @@
     .container-hero {
         flex-direction: column;
         justify-content: flex-end;
+        height: 80vh;
     }
     .hero-card {
         width: auto;
-        margin: 1rem;
+        margin: 0 1rem;
+        /* margin-top: 65px; */
     }
     .hero-img {
-        left: 30px;
         height: 15rem;
     }
     .big-btn {
         border-radius: 10px;
-        height: 60px;
-        font-size: 1.1rem;
+        height: 50px;
+        font-size: 1rem;
     }
     .big-btn img {
-        width: 2.5rem;
+        width: 2rem;
+    }
+}
+
+@media screen and (max-width: 444px) {
+    .container-hero {
+        height: 85vh;
+    }
+    .hero-card-title {
+        font-size: calc(1rem + 0.2vh);
+        margin: .5rem 0;
+    }
+    .hero-card-paragraph {
+        font-size: calc(.9rem - 0.2vh);
+        padding: 0 .5rem;
+        padding-bottom: .5rem;
     }
 }

@@ -5,6 +5,7 @@
     border: 2px solid var(--grey);
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .container-habilidades div:nth-child(-n + 2) {
@@ -15,8 +16,14 @@
 .section-backend,
 .section-others {
     width: 33%;
-    height: 100%;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.skill-title {
+    grid-column: 1/3;
 }
 
 .skill-title {
@@ -24,19 +31,8 @@
     margin: 1rem;
 }
 
-.skill-paragraph {
-    color: var(--dark);
-    margin: 0 1rem;
-    margin-bottom: 1rem;
-}
-
 .skills-list {
     text-align: start;
-    margin-bottom: 1rem;
-}
-
-.skills-list li {
-    margin-left: 3rem;
 }
 
 .skill-image {
@@ -57,9 +53,6 @@
     .skills-list {
         font-size: 0.8rem;
     }
-    .skill-paragraph {
-        font-size: 0.9em;
-    }
 }
 
 @media screen and (max-width: 768px) {
@@ -73,15 +66,20 @@
     .skills-list {
         font-size: 0.8rem;
     }
-    .skill-paragraph {
-        font-size: 0.755em;
+}
+
+@media screen and (max-width: 642px) {
+    .skill-title,
+    .skill-image,
+    .other-skill-image,
+    .skills-list {
+        grid-column: 1/3;
     }
 }
 
 @media screen and (max-width: 425px) {
     .container-habilidades {
         flex-direction: column;
-        align-items: center;
     }
     .second-setion {
         width: auto;
@@ -94,30 +92,30 @@
     .section-backend,
     .section-others {
         width: 100%;
-        height: 200px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        justify-items: stretch;
-        align-content: center;
-    }
-    .skill-title {
-        grid-column: 1 / 1;
-        grid-row: 1;
     }
     .skill-image {
-        grid-column: 1 / 2;
-        grid-row: 2;
         height: 4rem;
     }
-    .skill-paragraph {
-        display: none;
-    }
     .skills-list {
-        grid-column: 2 / 2;
-        grid-row: 2;
-    }
-    .other-skill-image {
-        grid-column: 1 / 2;
-        grid-row: 2;
+        margin-bottom: 1rem;
     }
 }
+
+
+/* @media screen and (max-width: 290px) {
+    .skill-title {
+        font-size: calc(0.5rem + 1vh);
+    }
+    .skills-list {
+        font-size: calc(0.5rem + .6vh);
+    }
+    .skill-image {
+        height: 2.3rem;
+    }
+    .other-skill-image {
+        font-size: 2.3rem;
+    }
+    .skill-paragraph {
+        font-size: 0.755em;
+    }
+} */
