@@ -83,3 +83,9 @@ body {
         height: auto;
     }
 }
+
+@media screen and (max-height: 660px) {
+    .first-section {
+        height: auto;
+    }
+}
