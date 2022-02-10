@@ -15,6 +15,7 @@
 .section-frontend,
 .section-backend,
 .section-others {
+    padding: 1rem;
     width: 33%;
     display: grid;
     grid-template-columns: 1fr 1fr;
