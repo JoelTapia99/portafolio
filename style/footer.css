@@ -57,6 +57,10 @@ footer {
     justify-content: space-between;
 }
 
+.btn-social-networks:active {
+    transform: scale(0.9);
+}
+
 @media screen and (max-width: 992px) {
     .footer-btn {
         padding: 0.5rem;
