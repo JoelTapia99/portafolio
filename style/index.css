@@ -29,7 +29,7 @@ body {
     display: inline-block;
     cursor: pointer;
     text-decoration: none;
-    font-size: calc(1em - .5vh);
+    font-size: calc(1em - .2vh);
 }
 
 .button:hover {
