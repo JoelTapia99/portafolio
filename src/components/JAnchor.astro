@@ -1,0 +1,28 @@
+---
+export interface AnchorProps {
+  link: string;
+  text: string;
+}
+
+const { text, link } = Astro.props as AnchorProps;
+---
+
+<a class='button btn-hero' role='button' href={link}>{text}</a>
+
+<style>
+  .button {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    color: var(--white);
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: calc(1em - 0.2vh);
+  }
+
+  .button:hover {
+    border: 1px solid var(--dark);
+    background-color: var(--dark);
+  }
+</style>

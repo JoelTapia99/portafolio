@@ -1,4 +1,4 @@
-import { HOST_URL } from "../app.constants.ts";
+import { HOST_URL } from "./app.constants.ts";
 
 export const METADATA = {
   tile: "Joel Tapia | Desarrollador de software",

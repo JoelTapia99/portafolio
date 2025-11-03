@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+
+@theme {
+    --color-primary: #4d02e0;
+    --color-second: #8d2ce2;
+    --color-grey: #707070;
+    --color-white: #f8f9fa;
+    --color-white-100: #f0f0f0;
+    --color-dark: #212529;
+}
+
+.bg-pattern {
+    background-color: #e5e5f7;
+    opacity: .9;
+    background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-size: 10px 10px;
+}
+
+
