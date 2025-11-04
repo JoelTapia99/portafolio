@@ -1,0 +1,30 @@
+---
+import JAnchor from '../JAnchor/JAnchor.astro';
+import { LINK } from '../../constants/link.constants';
+import './Hero.css';
+import JImg from '../JImg.astro';
+import { IMG } from '../../constants/img.constants';
+import BigButton from '../BigButton/BigButton.astro';
+---
+
+<div class='section'>
+  <section id='hero' class='container-hero'>
+    <div class='hero-card'>
+      <h1 class='hero-card-title'>
+        &lt;h1&gt; Hola, soy Joel Tapia&lt;/h1&gt;
+      </h1>
+      <p class='hero-card-paragraph'>
+        Tengo más de 3 años de experiencia en el campo de la programación.
+      </p>
+      <p class='hero-card-paragraph'>
+        Disfruto trabajando en proyectos innovadores y desafiantes que me
+        permiten aplicar y expandir mis conocimientos en el desarrollo de
+        software.
+      </p>
+      <JAnchor link={LINK.CSV} text='Mi curriculum' />
+    </div>
+    <JImg image={IMG.HERO} />
+  </section>
+
+  <BigButton />
+</div>

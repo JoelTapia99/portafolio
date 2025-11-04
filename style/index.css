@@ -20,7 +20,7 @@ body {
 
 /* botones */
 
-.button {
+.btn {
   background-color: var(--primary);
   border: 1px solid var(--primary);
   border-radius: 5px;
@@ -31,7 +31,7 @@ body {
   font-size: calc(1em - 0.2vh);
 }
 
-.button:hover {
+.btn:hover {
   border: 1px solid var(--dark);
   background-color: var(--dark);
 }
