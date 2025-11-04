@@ -32,8 +32,9 @@ const _title = title ? `${title} | Joel Tapia` : 'Joel Tapia';
 
     <title>{_title}</title>
   </head>
-  <body class="bg-pattern ">
-    <div class='max-w-11/12 flex content-center border-2'>
+  <body class='bg-pattern'>
+    <Nav />
+    <div class='max-w-11/12 flex content-center border-2 app-margin'>
       <slot />
     </div>
   </body>

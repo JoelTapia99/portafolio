@@ -1,24 +1,24 @@
 ---
-import { IMG } from '../../constants/img.constants';
+import {IMG} from '../../constants/img.constants';
 import JImg from '../JImg.astro';
 import './Nav.css';
 ---
 
 <header class='header'>
-  <nav class='navbar'>
-    <a href='#hero'>
-      <JImg image={IMG.LOGO} />
-    </a>
+    <nav class='navbar'>
+        <a class="logo" href='#hero'>
+            <JImg image={IMG.LOGO}/>
+        </a>
 
-    <input type='checkbox' id='check' />
-    <label for='check' class='expand-btn'>
-      <JImg styles='expand-img w-[30px]' image={IMG.EXPAND_NAVBAR} />
-    </label>
-    <div class='navigation'>
-      <ul>
-        <li class='links'><a href='#abilities'>Habilidades</a></li>
-        <li class='links'><a href='#socialNetworks'>Redes Sociales</a></li>
-      </ul>
-    </div>
-  </nav>
+        <input type='checkbox' id='check'/>
+        <label for='check' class='expand-btn'>
+            <JImg styles='expand-img w-[30px]' image={IMG.EXPAND_NAVBAR}/>
+        </label>
+        <div class='navigation h-full'>
+            <ul class="h-full">
+                <li class='links h-full'><a class="h-full" href='#abilities'>Habilidades</a></li>
+                <li class='links h-full'><a class="h-full" href='#socialNetworks'>Redes Sociales</a></li>
+            </ul>
+        </div>
+    </nav>
 </header>

@@ -3,25 +3,22 @@
     background: linear-gradient(to right, #4a00e0, #8e2de2);
     position: fixed;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 5px var(--dark);
 }
 
 .navbar {
-    box-shadow: 0 0 5px var(--dark);
     height: 60px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 80%;
 }
 
-.navbar img {
-    width: 40px;
-}
-
-.navigation,
-.navigation ul,
-.links,
-.links a {
-    height: 100%;
+.logo {
+    display: flex;
+    justify-content: center;
 }
 
 .expand-btn,
@@ -50,8 +47,7 @@
     background-color: var(--white);
 }
 
-/* media queries */
-
+/* ===========| MEDIA QUERIES |===========  */
 @media screen and (max-width: 576px) {
     .navbar {
         justify-content: space-between;

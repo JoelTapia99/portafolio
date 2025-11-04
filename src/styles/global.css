@@ -24,4 +24,11 @@ body {
     background-size: 10px 10px;
 }
 
+/* ===========| UTILITIES |===========  */
+.h-full {
+    height: 100%;
+}
 
+.app-margin {
+    max-width: 90%;
+}

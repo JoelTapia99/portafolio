@@ -2,8 +2,8 @@ export const IMG = {
   LOGO: {
     src: '/assets/keycap-bw.png',
     alt: 'Logo de Joel Tapia el desarrollador',
-    width: 50,
-    height: 50,
+    width: 40,
+    height: 40,
   },
   EXPAND_NAVBAR: {
     src: '/icons/expand-navbar-icon.svg',
