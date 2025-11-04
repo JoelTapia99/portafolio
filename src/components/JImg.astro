@@ -5,11 +5,11 @@ import type { IImage } from '../types/img.type';
 // ========= TYPES =========
 export interface ImgProps {
   image: IImage;
-  className?: string;
+  styles?: string;
 }
 
 // ========= LOGIC =========
-const { image, className } = Astro.props as ImgProps;
+const { image, styles } = Astro.props as ImgProps;
 const ext = image.src.split('.').pop()?.toLowerCase();
 const useHTMLImg = ['svg', 'ico', 'gif'].includes(ext ?? '');
 ---
@@ -17,14 +17,14 @@ const useHTMLImg = ['svg', 'ico', 'gif'].includes(ext ?? '');
 {
   useHTMLImg ?
     <img
-      class={className}
+      class={styles}
       src={image.src}
       alt={image.alt}
       width={image.width}
       height={image.height}
     />
   : <Image
-      class={className}
+      class={styles}
       src={image.src}
       alt={image.alt}
       width={image.width}
