@@ -1,10 +1,33 @@
 ---
 import Layout from '../components/Layout.astro';
 import Hero from '../components/Hero/Hero.astro';
-import Nav from '../components/Nav/Nav.astro';
+import JSkills from '../components/JSkills/JSkills.astro';
+import { ElementId } from '../constants/element-id.constants';
+import JTimeLife from '../components/JTimeLife/JTimeLife.astro';
 ---
 
 <Layout title='Programador'>
-  <Hero/>
-  <!--<Hero />-->
+  <Hero />
+  <div id={ElementId.ABILITIES} class='second-section'>
+    <JSkills />
+  </div>
+  <JTimeLife />
 </Layout>
+
+<style>
+  .second-section {
+    background-color: var(--white-100);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 425px) {
+    .second-section {
+      height: auto;
+    }
+  }
+</style>

@@ -23,4 +23,16 @@ export const IMG = {
     width: 55,
     height: 55,
   },
+  FRONT_END: {
+    src: 'assets/icons/FronEnd.svg',
+    alt: 'Icono de desarrollo Front End',
+    width: 100,
+    height: 100,
+  },
+  BACK_END:{
+    src: 'assets/icons/back-end.svg',
+    alt: 'Icono de desarrollo Back End',
+    width: 65,
+    height: 65,
+  }
 };

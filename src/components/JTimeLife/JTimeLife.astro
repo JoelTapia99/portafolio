@@ -1,0 +1,174 @@
+<div class='timeline-container'>
+  <ul class='timeline'>
+    <li class='timeline-event' data-date='12:30 - 1:00pm'>
+      <h3 class='timeline-event__title'>Registration</h3>
+      <p class='timeline-event__desc'>
+        Get here on time, it's first come first serve. Be late, get turned away.
+      </p>
+      <p class='timeline-event__desc'>
+        Get here on time, it's first come first serve. Be late, get turned away.
+      </p>
+      <p class='timeline-event__desc'>
+        Get here on time, it's first come first serve. Be late, get turned away.
+      </p>
+    </li>
+    <li class='timeline-event' data-date='2:30 - 4:00pm'>
+      <h3 class='timeline-event__title'>Opening Ceremony</h3>
+      <p class='timeline-event__desc'>
+        Get ready for an exciting event, this will kick off in amazing fashion
+        with MOP & Busta Rhymes as an opening show.
+      </p>
+    </li>
+    <li class='timeline-event' data-date='5:00 - 8:00pm'>
+      <h3 class='timeline-event__title'>Main Event</h3>
+      <p class='timeline-event__desc'>
+        This is where it all goes down. You will compete head to head with your
+        friends and rivals. Get ready!
+      </p>
+    </li>
+    <li class='timeline-event' data-date='8:30 - 9:30pm'>
+      <h3 class='timeline-event__title'>Closing Ceremony</h3>
+      <p class='timeline-event__desc'>
+        See who is the victor and who are the losers. The big stage is where the
+        winners bask in their own glory.
+      </p>
+    </li>
+  </ul>
+</div>
+
+<style>
+  /* ===== VARIABLES ===== */
+  :root {
+    --color-bg: #f9fafb;
+    --color-text: #1f2937;
+    --color-muted: #374151;
+    --color-accent: #2563eb;
+    --color-accent-dark: #1e3a8a;
+    --color-border: rgba(236, 0, 0, 0.1);
+    --color-shadow: rgba(0, 0, 0, 0.05);
+
+    --radius: 4px;
+    --spacing: 50px;
+    --line-thickness: 4px;
+    --dot-size: 11px;
+    --dot-ring: 4px;
+
+    --font-title: 'Oswald', sans-serif;
+    --font-body: 'Source Sans Pro', sans-serif;
+  }
+
+  /* ===== CONTENEDOR PRINCIPAL ===== */
+  .timeline-container {
+    background: var(--color-bg);
+    padding-block: var(--spacing);
+    text-align: center;
+    font-family: var(--font-body);
+  }
+
+  .timeline-title {
+    font-family: var(--font-title);
+    letter-spacing: 1.5px;
+    color: var(--color-text);
+    font-weight: 500;
+    font-size: 2.4em;
+    margin-block-end: 1.5rem;
+  }
+
+  /* ===== TIMELINE ===== */
+  .timeline {
+    position: relative;
+    list-style: none;
+    margin: var(--spacing) auto;
+    padding: var(--spacing);
+    border-left: var(--line-thickness) solid var(--color-accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    background: rgba(37, 99, 235, 0.03);
+    color: var(--color-text);
+    line-height: 1.6em;
+    font-size: 1.05em;
+    font-weight: 400;
+    max-width: 600px;
+    text-align: left;
+    box-shadow: 0 2px 8px var(--color-shadow);
+  }
+
+  /* ===== EVENTOS ===== */
+  .timeline-event {
+    position: relative;
+    border-bottom: 1px dashed var(--color-border);
+    padding-bottom: calc(var(--spacing) / 2);
+    margin-bottom: var(--spacing);
+  }
+
+  .timeline-event:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  /* Fecha (pseudo-elemento) */
+  .timeline-event::before {
+    content: attr(data-date);
+    position: absolute;
+    left: calc(-1.2 * (120px + var(--spacing) + var(--dot-size)));
+    top: 0;
+    min-width: 120px;
+    text-align: right;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 0.9em;
+    font-weight: 400;
+  }
+
+
+  /* Punto en la línea (pseudo-elemento) */
+  .timeline-event::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: calc(
+      (var(--spacing) + var(--line-thickness) + (var(--dot-size) * 0.35)) * -1
+    );
+    height: var(--dot-size);
+    width: var(--dot-size);
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 0 var(--dot-ring) var(--color-accent);
+  }
+
+  /* ===== CONTENIDO DEL EVENTO ===== */
+  .timeline-event__title {
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 1.3em;
+    color: var(--color-accent-dark);
+    margin-bottom: 0.4em;
+    letter-spacing: 1px;
+  }
+
+  .timeline-event__desc {
+    color: var(--color-muted);
+    margin: 0.3em 0;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .timeline {
+      padding: 1.5rem;
+      max-width: 90%;
+    }
+
+    .timeline-event::before {
+      display: block;
+      position: relative;
+      left: 0;
+      text-align: left;
+      margin-bottom: 0.25em;
+      color: var(--color-accent-dark);
+      font-weight: 600;
+    }
+
+    .timeline-event::after {
+      display: none;
+    }
+  }
+</style>
