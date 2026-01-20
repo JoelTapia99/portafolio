@@ -1,16 +1,18 @@
 ---
+import {NavigationId} from "../constants/navigation-id.constants.ts";
+
 const navLinks = [
-    {href: "#about", label: "Sobre mi"},
-    {href: "#skills", label: "Habilidades"},
-    {href: "#experience", label: "Experiencia"},
-    {href: "#projects", label: "Proyectos"},
-    {href: "#contact", label: "Contacto"},
+    {href: `#${NavigationId.ABOUT}`, label: "Sobre mi"},
+    {href: `#${NavigationId.SKILLS}`, label: "Habilidades"},
+    {href: `#${NavigationId.EXPERIENCE}`, label: "Experiencia"},
+    {href: `#${NavigationId.PROJECTS}`, label: "Proyectos"},
+    {href: `#${NavigationId.CONTACT}`, label: "Contacto"},
 ];
 
 const CONTACT_ID = "#contact";
 ---
 
-<header id="navbar" class="navbar">
+<header id={NavigationId.NAVBAR} class="navbar">
     <nav class="nav-container">
         <div class="nav-content">
             <!-- LOGO -->
