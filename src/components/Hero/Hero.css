@@ -10,8 +10,8 @@
 
 .hero-card {
     border-radius: 20px;
-    background-color: var(--white);
-    border: 1px solid var(--grey);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-grey);
     padding: 0.5rem;
     width: 40%;
     text-align: center;

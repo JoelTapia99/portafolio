@@ -1,6 +1,6 @@
 footer {
-  background-color: var(--grey);
-  color: var(--white);
+  background-color: var(--color-grey);
+  color: var(--color-white);
 }
 
 .footer-container {
@@ -11,9 +11,9 @@ footer {
 }
 
 .footer-btn {
-  background-color: var(--primary);
+  background-color: var(--color-primary);
   padding: 0.7rem;
-  color: var(--white);
+  color: var(--color-white);
   text-align: center;
   font-size: 1.1rem;
   text-decoration: none;
@@ -23,7 +23,7 @@ footer {
 }
 
 .footer-btn:hover {
-  background-color: var(--dark);
+  background-color: var(--color-dark);
 }
 
 .briefcase {
@@ -34,7 +34,7 @@ footer {
 .briefcase a {
   text-decoration: none;
   font-size: larger;
-  color: var(--white);
+  color: var(--color-white);
   text-align: end;
   margin-left: 0.7rem;
 }

@@ -10,11 +10,11 @@
 .about-work,
 .about-me,
 .about-cv {
-  border: 2px solid var(--grey);
+  border: 2px solid var(--color-grey);
   padding: 0.7rem;
   border-radius: 20px;
   text-align: center;
-  color: var(--dark);
+  color: var(--color-dark);
   width: 20rem;
 }
 
@@ -37,12 +37,12 @@
   align-items: center;
   font-size: 1.1rem;
   font-weight: bolder;
-  color: var(--dark);
+  color: var(--color-dark);
   text-decoration: none;
 }
 
 .my-linkedIn a:hover {
-  color: var(--primary);
+  color: var(--color-primary);
 }
 
 .my-linkedIn a img {
@@ -69,12 +69,12 @@
   .about-work,
   .about-me,
   .about-cv {
-    border: 2px solid var(--grey);
+    border: 2px solid var(--color-grey);
     padding: 0.7rem;
     margin: 0.5rem;
     border-radius: 10px;
     text-align: center;
-    color: var(--dark);
+    color: var(--color-dark);
     width: 20rem;
   }
   .title-of-about {
