@@ -1,368 +1,375 @@
 ---
-import {NavigationId} from "../constants/navigation-id.constants.ts";---
+import {NavigationId} from "../constants/navigation-id.constants.ts";
+
+const LINKS = {
+    github: "https://github.com/JoelTapia99",
+    linkedin: "https://www.linkedin.com/in/joel-tapia-dev",
+    email: "mailto:joelts159@gmail.com"
+}
+---
 
 <section class="hero">
-  <!-- Background gradient effects -->
-  <div class="bg-gradient"></div>
-  <div class="bg-circle-left"></div>
-  <div class="bg-circle-right"></div>
+    <!-- Background gradient effects -->
+    <div class="bg-gradient"></div>
+    <div class="bg-circle-left"></div>
+    <div class="bg-circle-right"></div>
 
-  <!-- Grid pattern overlay -->
-  <div class="grid-pattern"></div>
+    <!-- Grid pattern overlay -->
+    <div class="grid-pattern"></div>
 
-  <div class="hero-content">
-    <!-- Badge -->
-    <!--<div class="badge">-->
-    <!--  <span class="pulse-container">-->
-    <!--    <span class="pulse"></span>-->
-    <!--    <span class="pulse-dot"></span>-->
-    <!--  </span>-->
-    <!--  <span class="badge-text">Disponible para nuevos proyectos</span>-->
-    <!--</div>-->
+    <div class="hero-content">
+        <!-- Badge -->
+        <!--<div class="badge">-->
+        <!--  <span class="pulse-container">-->
+        <!--    <span class="pulse"></span>-->
+        <!--    <span class="pulse-dot"></span>-->
+        <!--  </span>-->
+        <!--  <span class="badge-text">Disponible para nuevos proyectos</span>-->
+        <!--</div>-->
 
-    <!-- Main heading -->
-    <h1 class="heading">
-      <span class="text-foreground">Hola, soy </span>
-      <span class="gradient-text">Joel Tapia</span>
-    </h1>
+        <!-- Main heading -->
+        <h1 class="heading">
+            <span class="text-foreground">Hola, soy </span>
+            <span class="gradient-text">Joel Tapia</span>
+        </h1>
 
-    <!-- Subtitle -->
-    <p class="subtitle">Full Stack Developer</p>
+        <!-- Subtitle -->
+        <p class="subtitle">Full Stack Developer</p>
 
-    <!-- Description -->
-    <p class="description">
-      Creo experiencias digitales excepcionales. Especializado en Angular,
-      Laravel y ReactNative.
-    </p>
+        <!-- Description -->
+        <p class="description">
+            Creo experiencias digitales excepcionales. Especializado en Angular,
+            Laravel y ReactNative.
+        </p>
 
-    <!-- CTA Buttons -->
-    <div class="cta-buttons">
-      <a href={`#${NavigationId.PROJECTS}`} class="btn btn-primary">
-        Ver proyectos
-        <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="12" y1="5" x2="12" y2="19"></line>
-          <polyline points="19 12 12 19 5 12"></polyline>
-        </svg>
-      </a>
-      <a href={`#${NavigationId.CONTACT}`} class="btn btn-outline">
-        Contactar
-      </a>
+        <!-- CTA Buttons -->
+        <div class="cta-buttons">
+            <a href={`#${NavigationId.PROJECTS}`} class="btn btn-primary">
+                Ver proyectos
+                <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+            </a>
+            <a href={`#${NavigationId.CONTACT}`} class="btn btn-outline">
+                Contactar
+            </a>
+        </div>
+
+        <!-- Social links -->
+        <div class="social-links">
+            <a href={LINKS.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+            </a>
+            <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+            <a href={LINKS.email} aria-label="Email">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+            </a>
+        </div>
     </div>
 
-    <!-- Social links -->
-    <div class="social-links">
-      <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
         </svg>
-      </a>
-      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-          <rect x="2" y="9" width="4" height="12"></rect>
-          <circle cx="4" cy="4" r="2"></circle>
-        </svg>
-      </a>
-      <a href="mailto:carlos@example.com" aria-label="Email">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-          <polyline points="22,6 12,13 2,6"></polyline>
-        </svg>
-      </a>
     </div>
-  </div>
-
-  <!-- Scroll indicator -->
-  <div class="scroll-indicator">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <line x1="12" y1="5" x2="12" y2="19"></line>
-      <polyline points="19 12 12 19 5 12"></polyline>
-    </svg>
-  </div>
 </section>
 
 <style>
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
+    .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
 
-  .bg-gradient {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at top, rgba(104, 208, 208, 0.2) 0%, var(--background) 50%, var(--background) 100%);
-  }
+    .bg-gradient {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at top, rgba(104, 208, 208, 0.2) 0%, var(--background) 50%, var(--background) 100%);
+    }
 
-  .bg-circle-left {
-    position: absolute;
-    top: 25%;
-    left: -25%;
-    width: 384px;
-    height: 384px;
-    background: var(--primary);
-    opacity: 0.1;
-    border-radius: 50%;
-    filter: blur(96px);
-  }
+    .bg-circle-left {
+        position: absolute;
+        top: 25%;
+        left: -25%;
+        width: 384px;
+        height: 384px;
+        background: var(--primary);
+        opacity: 0.1;
+        border-radius: 50%;
+        filter: blur(96px);
+    }
 
-  .bg-circle-right {
-    position: absolute;
-    bottom: 25%;
-    right: -25%;
-    width: 384px;
-    height: 384px;
-    background: var(--accent);
-    opacity: 0.1;
-    border-radius: 50%;
-    filter: blur(96px);
-  }
+    .bg-circle-right {
+        position: absolute;
+        bottom: 25%;
+        right: -25%;
+        width: 384px;
+        height: 384px;
+        background: var(--accent);
+        opacity: 0.1;
+        border-radius: 50%;
+        filter: blur(96px);
+    }
 
-  .grid-pattern {
-    position: absolute;
-    inset: 0;
-    opacity: 0.03;
-    background-image: 
-      linear-gradient(to right, currentColor 1px, transparent 1px),
-      linear-gradient(to bottom, currentColor 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
+    .grid-pattern {
+        position: absolute;
+        inset: 0;
+        opacity: 0.03;
+        background-image: linear-gradient(to right, currentColor 1px, transparent 1px),
+        linear-gradient(to bottom, currentColor 1px, transparent 1px);
+        background-size: 60px 60px;
+    }
 
-  .hero-content {
-    position: relative;
-    z-index: 10;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    text-align: center;
-  }
-
-  @media (min-width: 640px) {
     .hero-content {
-      padding: 0 1.5rem;
+        position: relative;
+        z-index: 10;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        text-align: center;
     }
-  }
 
-  @media (min-width: 1024px) {
-    .hero-content {
-      padding: 0 2rem;
+    @media (min-width: 640px) {
+        .hero-content {
+            padding: 0 1.5rem;
+        }
     }
-  }
 
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 9999px;
-    border: 1px solid rgba(49, 48, 56, 0.5);
-    background: rgba(44, 43, 51, 0.5);
-    backdrop-filter: blur(4px);
-    margin-bottom: 2rem;
-  }
-
-  .pulse-container {
-    position: relative;
-    display: flex;
-    height: 0.5rem;
-    width: 0.5rem;
-  }
-
-  .pulse {
-    position: absolute;
-    display: inline-flex;
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-    background: var(--primary);
-    opacity: 0.75;
-    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-  }
-
-  @keyframes ping {
-    75%, 100% {
-      transform: scale(2);
-      opacity: 0;
+    @media (min-width: 1024px) {
+        .hero-content {
+            padding: 0 2rem;
+        }
     }
-  }
 
-  .pulse-dot {
-    position: relative;
-    display: inline-flex;
-    border-radius: 50%;
-    height: 0.5rem;
-    width: 0.5rem;
-    background: var(--primary);
-  }
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(49, 48, 56, 0.5);
+        background: rgba(44, 43, 51, 0.5);
+        backdrop-filter: blur(4px);
+        margin-bottom: 2rem;
+    }
 
-  .badge-text {
-    font-size: 0.875rem;
-    color: var(--muted-foreground);
-  }
+    .pulse-container {
+        position: relative;
+        display: flex;
+        height: 0.5rem;
+        width: 0.5rem;
+    }
 
-  .heading {
-    font-size: 2.25rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    text-wrap: balance;
-  }
+    .pulse {
+        position: absolute;
+        display: inline-flex;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        background: var(--primary);
+        opacity: 0.75;
+        animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
 
-  @media (min-width: 640px) {
+    @keyframes ping {
+        75%, 100% {
+            transform: scale(2);
+            opacity: 0;
+        }
+    }
+
+    .pulse-dot {
+        position: relative;
+        display: inline-flex;
+        border-radius: 50%;
+        height: 0.5rem;
+        width: 0.5rem;
+        background: var(--primary);
+    }
+
+    .badge-text {
+        font-size: 0.875rem;
+        color: var(--muted-foreground);
+    }
+
     .heading {
-      font-size: 3rem;
+        font-size: 2.25rem;
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        text-wrap: balance;
     }
-  }
 
-  @media (min-width: 768px) {
-    .heading {
-      font-size: 4.5rem;
+    @media (min-width: 640px) {
+        .heading {
+            font-size: 3rem;
+        }
     }
-  }
 
-  .text-foreground {
-    color: var(--foreground);
-  }
+    @media (min-width: 768px) {
+        .heading {
+            font-size: 4.5rem;
+        }
+    }
 
-  .gradient-text {
-    background: linear-gradient(to right, var(--primary), var(--accent), var(--primary));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+    .text-foreground {
+        color: var(--foreground);
+    }
 
-  .subtitle {
-    font-size: 1.25rem;
-    color: var(--muted-foreground);
-    font-weight: 300;
-    margin-bottom: 1rem;
-  }
+    .gradient-text {
+        background: linear-gradient(to right, var(--primary), var(--accent), var(--primary));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
-  @media (min-width: 640px) {
     .subtitle {
-      font-size: 1.5rem;
+        font-size: 1.25rem;
+        color: var(--muted-foreground);
+        font-weight: 300;
+        margin-bottom: 1rem;
     }
-  }
 
-  .description {
-    max-width: 42rem;
-    margin: 0 auto 2.5rem;
-    color: var(--muted-foreground);
-    font-size: 1.125rem;
-    line-height: 1.75;
-  }
+    @media (min-width: 640px) {
+        .subtitle {
+            font-size: 1.5rem;
+        }
+    }
 
-  .cta-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-  }
+    .description {
+        max-width: 42rem;
+        margin: 0 auto 2.5rem;
+        color: var(--muted-foreground);
+        font-size: 1.125rem;
+        line-height: 1.75;
+    }
 
-  @media (min-width: 640px) {
     .cta-buttons {
-      flex-direction: row;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 3rem;
     }
-  }
 
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 0.5rem;
-    transition: all 0.2s;
-    border: 1px solid transparent;
-  }
-
-  .btn-primary {
-    background: var(--primary);
-    color: var(--background);
-  }
-
-  .btn-primary:hover {
-    background: oklch(0.6 0.18 180);
-  }
-
-  .arrow-icon {
-    transition: transform 0.2s;
-  }
-
-  .btn-primary:hover .arrow-icon {
-    transform: translateY(4px);
-  }
-
-  .btn-outline {
-    border-color: rgba(49, 48, 56, 0.5);
-    background: transparent;
-    color: var(--foreground);
-  }
-
-  .btn-outline:hover {
-    background: rgba(44, 43, 51, 0.5);
-  }
-
-  .social-links {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-  }
-
-  .social-links a {
-    color: var(--muted-foreground);
-    transition: color 0.2s;
-  }
-
-  .social-links a:hover {
-    color: var(--primary);
-  }
-
-  .scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--muted-foreground);
-    animation: bounce 2s infinite;
-  }
-
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateX(-50%) translateY(-25%);
-      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    @media (min-width: 640px) {
+        .cta-buttons {
+            flex-direction: row;
+        }
     }
-    50% {
-      transform: translateX(-50%) translateY(0);
-      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        transition: all 0.2s;
+        border: 1px solid transparent;
     }
-  }
+
+    .btn-primary {
+        background: var(--primary);
+        color: var(--background);
+    }
+
+    .btn-primary:hover {
+        background: oklch(0.6 0.18 180);
+    }
+
+    .arrow-icon {
+        transition: transform 0.2s;
+    }
+
+    .btn-primary:hover .arrow-icon {
+        transform: translateY(4px);
+    }
+
+    .btn-outline {
+        border-color: rgba(49, 48, 56, 0.5);
+        background: transparent;
+        color: var(--foreground);
+    }
+
+    .btn-outline:hover {
+        background: rgba(44, 43, 51, 0.5);
+    }
+
+    .social-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .social-links a {
+        color: var(--muted-foreground);
+        transition: color 0.2s;
+    }
+
+    .social-links a:hover {
+        color: var(--primary);
+    }
+
+    .scroll-indicator {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        color: var(--muted-foreground);
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateX(-50%) translateY(-25%);
+            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        }
+        50% {
+            transform: translateX(-50%) translateY(0);
+            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+    }
 </style>
 
 <script>
     //   ============================================
     //    SMOOTH SCROLL FOR CTS BUTTONS
     //   ============================================
-  const ctaButtons = document.querySelectorAll('.hero a[href^="#"]');
-  ctaButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-      const href = button.getAttribute('href');
-      if (href && href !== '#') {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
+    const ctaButtons = document.querySelectorAll('.hero a[href^="#"]');
+    ctaButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const href = button.getAttribute('href');
+            if (href && href !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({behavior: 'smooth'});
+                }
+            }
+        });
     });
-  });
 </script>
