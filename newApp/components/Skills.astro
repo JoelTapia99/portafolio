@@ -1,0 +1,259 @@
+---
+import {Icon} from 'astro-icon/components';
+
+enum ICONS_NAME {
+    typescript = "simple-icons:typescript",
+    angular = "simple-icons:angular",
+    react = "simple-icons:react",
+    html = "ri:html5-fill",
+    css = "simple-icons:css",
+    javascript = "simple-icons:javascript",
+    bootstrap = "simple-icons:bootstrap",
+    primeng = "simple-icons:primeng",
+    java = "ri:java-fill",
+    springBoot = "simple-icons:spring",
+    php = "simple-icons:php",
+    laravel = "simple-icons:laravel",
+    postgresql = "simple-icons:postgresql",
+    mysql = "fontisto:mysql",
+    github = "simple-icons:github",
+    cypress = "simple-icons:cypress",
+    jest = "simple-icons:jest",
+    vitest = "simple-icons:vitest",
+    git = "simple-icons:git",
+    linux = "devicon:linux",
+}
+
+const skillCategories = [
+    {
+        title: "Frontend",
+        skills: [
+            {name: "TypeScript", color: "#1140ad", icon: ICONS_NAME.typescript},
+            {name: "Angular", color: "#e70a0a", icon: ICONS_NAME.angular},
+            {name: "React", color: "#53C1DE", icon: ICONS_NAME.react},
+            {name: "HTML5", color: "#F16529", icon: ICONS_NAME.html},
+            {name: "CSS3", color: "#1572b6", icon: ICONS_NAME.css},
+            {name: "JavaScript", color: "#F7DF1E", icon: ICONS_NAME.javascript},
+            {name: "Boostrap", color: "#8712fb", icon: ICONS_NAME.bootstrap},
+            {name: "PrimeNG", color: "#c40533", icon: ICONS_NAME.primeng},
+        ],
+    },
+    {
+        title: "Backend",
+        skills: [
+            {name: "Java", icon: ICONS_NAME.java, preserveColors: true},
+            {name: "Spring", color: "#70AD51", icon: ICONS_NAME.springBoot},
+            {name: "PHP", color: "#8892BF", icon: ICONS_NAME.php},
+            {name: "Laravel", color: "#FF2D20", icon: ICONS_NAME.laravel},
+            {name: "PostgreSQL", color: "#336791", icon: ICONS_NAME.postgresql},
+            {name: "Mysql", color: "#00758F", icon: ICONS_NAME.mysql},
+        ],
+    },
+    {
+        title: "Herramientas",
+        skills: [
+            {name: "Git", color: "#EE513B", icon: ICONS_NAME.git},
+            {name: "Github", color: "#000000", icon: ICONS_NAME.github},
+            {name: "Cypress", color: "#69d3a7", icon: ICONS_NAME.cypress},
+            {name: "Jest", color: "#c63d14", icon: ICONS_NAME.jest},
+            {name: "Vitest", color: "#1cf590", icon: ICONS_NAME.vitest},
+            {name: "Linux", color: "#FCC624", icon: ICONS_NAME.linux},
+        ],
+    },
+];
+---
+
+<section id="skills" class="skills-section">
+    <div class="skills-container">
+        <!-- Section header -->
+        <div class="section-header">
+            <span class="section-tag">Habilidades</span>
+            <h2 class="section-title">Tecnologias que domino</h2>
+            <p class="section-description">
+                Mi stack tecnologico abarca desde el frontend hasta el backend,
+                permitiendome crear soluciones completas y eficientes.
+            </p>
+        </div>
+
+        <!-- Skills grid -->
+        <div class="skills-grid">
+            {skillCategories.map((category) => (
+                    <div class="skill-category">
+                        <h3 class="category-title">{category.title}</h3>
+                        <div class="skills-grid-inner">
+                            {category.skills.map((skill) => (
+                                    <div class="skill-item" style={skill.color ? `--skill-color: ${skill.color}` : ''}>
+                                        <div class="skill-icon-wrapper">
+                                            <Icon class={"skill-icon"} name={skill.icon}/>
+                                        </div>
+                                        <span class="skill-name">{skill.name}</span>
+                                    </div>
+                            ))}
+                        </div>
+                    </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    :root {
+        --background: oklch(0.13 0.02 260);
+        --foreground: oklch(0.95 0 0);
+        --primary: oklch(0.65 0.2 180);
+        --muted-foreground: oklch(0.65 0 0);
+        --secondary: oklch(0.22 0.02 260);
+        --border: oklch(0.28 0.02 260);
+        --card: oklch(0.16 0.02 260);
+    }
+
+    .skills-section {
+        padding: 6rem 0;
+        position: relative;
+    }
+
+    .skills-container {
+        max-width: 1152px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    @media (min-width: 640px) {
+        .skills-container {
+            padding: 0 1.5rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .skills-container {
+            padding: 0 2rem;
+        }
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .section-tag {
+        color: var(--primary);
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .section-title {
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+        color: var(--foreground);
+    }
+
+    @media (min-width: 640px) {
+        .section-title {
+            font-size: 2.25rem;
+        }
+    }
+
+    .section-description {
+        max-width: 42rem;
+        margin: 0 auto;
+        color: var(--muted-foreground);
+        font-size: 1.125rem;
+    }
+
+    .skills-grid {
+        display: grid;
+        gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .skills-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .skill-category {
+        padding: 1.5rem;
+        border-radius: 1rem;
+        background: rgba(38, 37, 45, 0.5);
+        border: 1px solid rgba(49, 48, 56, 0.5);
+        backdrop-filter: blur(4px);
+    }
+
+    .category-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        color: var(--foreground);
+    }
+
+    .skills-grid-inner {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .skill-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem;
+        border-radius: 0.75rem;
+        transition: all 0.3s ease;
+        cursor: default;
+    }
+
+    .skill-item:hover {
+        background: rgba(44, 43, 51, 0.5);
+    }
+
+    .skill-icon-wrapper {
+        padding: 0.75rem;
+        border-radius: 0.75rem;
+        background: rgba(44, 43, 51, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .skill-item:hover .skill-icon-wrapper {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px var(--primary, rgba(104, 208, 208, 0.3));
+    }
+
+    .skill-icon {
+        width: 2rem;
+        height: 2rem;
+        color: var(--primary);
+        transition: color 0.3s ease;
+    }
+
+    .skill-item:hover .skill-icon {
+        color: var(--skill-color, var(--primary));
+    }
+
+    .skill-item:hover .skill-icon-multicolor {
+        color: inherit;
+    }
+
+    .skill-icon :global(svg) {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .skill-name {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--muted-foreground);
+        text-align: center;
+        transition: color 0.3s ease;
+    }
+
+    .skill-item:hover .skill-name {
+        color: var(--foreground);
+    }
+</style>
