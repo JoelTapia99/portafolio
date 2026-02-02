@@ -1,0 +1,348 @@
+---
+const timelineData = [
+    {
+        year: "dic.2025 - Actualidad",
+        title: "Ingeniero IT",
+        company: "TATA Consultancy Services",
+        description:
+            "Lidero el desarrollo de aplicaciones web escalables usando Next.js y microservicios. Mentor de desarrolladores junior y arquitecto de soluciones.",
+        type: "work",
+        tags: ["Angular", "TypeScript", "HTML/CSS", "PrimeNG", "Figma"],
+    },
+    {
+        year: "jul.2022 - dic.2025",
+        title: "Programador FullStack",
+        company: "Formos EC",
+        description:
+            "Cree interfaces de usuario interactivas para clientes de alto perfil. Implementacion de disenos pixel-perfect y optimizacion de rendimiento.",
+        type: "work",
+        tags: ["React Navive", "Angular", "SpringBoot", "HTML/CSS", "TypeScript", "Next.js", "Groovy", "Grails"],
+    },
+    {
+        year: "jun.2021 - abr.2022",
+        title: "Programador autónomo",
+        company: "Programador autónomo",
+        description:
+            "Cree interfaces de usuario interactivas para clientes de alto perfil. Implementacion de disenos pixel-perfect y optimizacion de rendimiento.",
+        type: "work",
+        tags: ["TypeScript", "HTML/CSS", "PHP", "MySQL", "Laravel", "Angular", "Boostrap", "PrimeNG"],
+    },
+    {
+        year: "ago.2019 - abr.2021",
+        title: "Programador FullStack",
+        company: "LINKEAR S.A",
+        description:
+            "Mis primeros pasos profesionales. Aprendi las bases del desarrollo web moderno y metodologias agiles trabajando en proyectos reales.",
+        type: "Pasantía",
+        tags: ["TypeScript", "HTML/CSS", "PHP", "MySQL", "Laravel", "Angular", "Boostrap"],
+    },
+    {
+        year: "feb.2019 - abr.2019",
+        title: "Desarrollador Junior",
+        company: "Ministerio de Transporte y Obras Públicas",
+        description:
+            "Investigación de tecnologías de Desarrollo de software para encontrar la tecnología que cubra mejor las necesidades de la empresa de manera efectiva.",
+        type: "Pasantía",
+        tags: ["Investigación", "Estimación", "Maquetación"],
+    },
+];
+
+const workIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>';
+const educationIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>';
+---
+
+<section id="experience" class="timeline-section">
+    <div class="timeline-bg"></div>
+
+    <div class="timeline-container">
+        <!-- Section header -->
+        <div class="section-header">
+            <span class="section-tag">Experiencia</span>
+            <h2 class="section-title">Mi trayectoria profesional</h2>
+            <p class="section-description">
+                Un recorrido por mi carrera, desde mis inicios hasta donde me
+                encuentro hoy.
+            </p>
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline">
+            <!-- Vertical line -->
+            <div class="timeline-line"></div>
+
+            <!-- Timeline items -->
+            <div class="timeline-items">
+                {timelineData.map((item, index) => (
+                        <div class={`timeline-item ${index % 2 === 0 ? 'reverse' : ''}`}>
+                            <!-- Content -->
+                            <div class="timeline-content">
+                                <div class={`timeline-card ${index % 2 === 0 ? 'right' : 'left'}`}>
+                                    <!-- Year badge -->
+                                    <span class="year-badge">{item.year}</span>
+
+                                    <!-- Title and company -->
+                                    <h3 class="item-title">{item.title}</h3>
+                                    <p class="item-company">{item.company}</p>
+
+                                    <!-- Description -->
+                                    <p class="item-description">{item.description}</p>
+
+                                    <!-- Tags -->
+                                    <div class="item-tags">
+                                        {item.tags.map((tag) => (
+                                                <span class="tag">{tag}</span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Icon -->
+                            <div class="timeline-icon">
+                                <div class="icon-circle" set:html={item.type === 'work' ? workIcon : educationIcon}/>
+                            </div>
+
+                            <!-- Empty space for alternating layout -->
+                            <div class="timeline-spacer"></div>
+                        </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .timeline-section {
+        padding: 6rem 0;
+        position: relative;
+    }
+
+    .timeline-bg {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, var(--background), rgba(44, 43, 51, 0.2), var(--background));
+    }
+
+    .timeline-container {
+        position: relative;
+        max-width: 896px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    @media (min-width: 640px) {
+        .timeline-container {
+            padding: 0 1.5rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .timeline-container {
+            padding: 0 2rem;
+        }
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .section-tag {
+        color: var(--primary);
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .section-title {
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+        color: var(--foreground);
+    }
+
+    @media (min-width: 640px) {
+        .section-title {
+            font-size: 2.25rem;
+        }
+    }
+
+    .section-description {
+        max-width: 42rem;
+        margin: 0 auto;
+        color: var(--muted-foreground);
+        font-size: 1.125rem;
+    }
+
+    .timeline {
+        position: relative;
+    }
+
+    .timeline-line {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: linear-gradient(to bottom, rgba(104, 208, 208, 0.5), var(--border), var(--border));
+    }
+
+    @media (min-width: 768px) {
+        .timeline-line {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    .timeline-items {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .timeline-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .timeline-item {
+            flex-direction: row;
+        }
+
+        .timeline-item.reverse {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .timeline-content {
+        flex: 1;
+    }
+
+    @media (min-width: 768px) {
+        .timeline-content {
+            width: 50%;
+        }
+    }
+
+    .timeline-card {
+        margin-left: 2rem;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        background: rgba(38, 37, 45, 0.5);
+        border: 1px solid rgba(49, 48, 56, 0.5);
+        backdrop-filter: blur(4px);
+        transition: border-color 0.2s;
+    }
+
+    .timeline-card:hover {
+        border-color: rgba(104, 208, 208, 0.5);
+    }
+
+    @media (min-width: 768px) {
+        .timeline-card {
+            margin-left: 0;
+        }
+
+        .timeline-card.right {
+            margin-right: 3rem;
+        }
+
+        .timeline-card.left {
+            margin-left: 3rem;
+        }
+    }
+
+    .year-badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        background: rgba(104, 208, 208, 0.1);
+        color: var(--primary);
+        font-size: 0.875rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
+
+    .item-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        color: var(--foreground);
+        transition: color 0.2s;
+    }
+
+    .timeline-card:hover .item-title {
+        color: var(--primary);
+    }
+
+    .item-company {
+        color: var(--primary);
+        font-weight: 500;
+        margin-bottom: 0.75rem;
+    }
+
+    .item-description {
+        color: var(--muted-foreground);
+        font-size: 0.875rem;
+        line-height: 1.75;
+        margin-bottom: 1rem;
+    }
+
+    .item-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .tag {
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.375rem;
+        background: rgba(44, 43, 51, 0.5);
+        font-size: 0.75rem;
+        color: var(--muted-foreground);
+    }
+
+    .timeline-icon {
+        position: absolute;
+        left: 0;
+        top: 1.5rem;
+        transform: translateX(-50%);
+    }
+
+    @media (min-width: 768px) {
+        .timeline-icon {
+            left: 50%;
+        }
+    }
+
+    .icon-circle {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background: var(--background);
+        border: 2px solid var(--primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon-circle :global(svg) {
+        color: var(--primary);
+    }
+
+    .timeline-spacer {
+        display: none;
+    }
+
+    @media (min-width: 768px) {
+        .timeline-spacer {
+            display: block;
+            flex: 1;
+            width: 50%;
+        }
+    }
+</style>
