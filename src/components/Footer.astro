@@ -1,0 +1,173 @@
+---
+import {SOCIAL_NETWORKS} from '../constants/social-network.constants.ts';
+const currentYear = new Date().getFullYear();
+
+const githubIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>';
+const linkedinIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>';
+const mailIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>';
+---
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <!-- Logo and copyright -->
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <span class="bracket">&lt;</span>
+                    Carlos
+                    <span class="bracket">/&gt;</span>
+                </a>
+                <p class="copyright">
+                    {currentYear} Joel Tapia. Todos los derechos reservados.
+                </p>
+            </div>
+
+            <!-- Social links -->
+            <div class="social-links">
+                <a href={SOCIAL_NETWORKS.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                   class="social-link">
+                    <span set:html={githubIcon}/>
+                </a>
+                <a href={SOCIAL_NETWORKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                   class="social-link">
+                    <span set:html={linkedinIcon}/>
+                </a>
+                <a href={SOCIAL_NETWORKS.email} aria-label="Email" class="social-link">
+                    <span set:html={mailIcon}/>
+                </a>
+            </div>
+        </div>
+
+        <!-- Bottom text -->
+        <!--<div class="footer-bottom">-->
+        <!--    <p class="footer-text">-->
+        <!--        Diseno inspirado en{" "}-->
+        <!--        <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="footer-link">-->
+        <!--            astro.build-->
+        <!--        </a>-->
+        <!--        {" "}| Construido con Astro.js-->
+        <!--    </p>-->
+        <!--</div>-->
+    </div>
+</footer>
+
+<style>
+    :root {
+        --background: oklch(0.13 0.02 260);
+        --foreground: oklch(0.95 0 0);
+        --primary: oklch(0.65 0.2 180);
+        --muted-foreground: oklch(0.65 0 0);
+        --border: oklch(0.28 0.02 260);
+    }
+
+    .footer {
+        padding: 3rem 0;
+        border-top: 1px solid rgba(49, 48, 56, 0.5);
+    }
+
+    .footer-container {
+        max-width: 1152px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    @media (min-width: 640px) {
+        .footer-container {
+            padding: 0 1.5rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-container {
+            padding: 0 2rem;
+        }
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-content {
+            flex-direction: row;
+        }
+    }
+
+    .footer-brand {
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-brand {
+            text-align: left;
+        }
+    }
+
+    .logo {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--foreground);
+        text-decoration: none;
+    }
+
+    .bracket {
+        color: var(--primary);
+    }
+
+    .copyright {
+        font-size: 0.875rem;
+        color: var(--muted-foreground);
+        margin-top: 0.5rem;
+    }
+
+    .social-links {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .social-link {
+        color: var(--muted-foreground);
+        transition: color 0.2s;
+        text-decoration: none;
+    }
+
+    .social-link:hover {
+        color: var(--primary);
+    }
+
+    .footer-bottom {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(49, 48, 56, 0.5);
+        text-align: center;
+    }
+
+    .footer-text {
+        font-size: 0.875rem;
+        color: var(--muted-foreground);
+    }
+
+    .footer-link {
+        color: var(--primary);
+        text-decoration: none;
+        transition: opacity 0.2s;
+    }
+
+    .footer-link:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<script>
+    // Smooth scroll for logo link
+    const logo = document.querySelector('.footer .logo');
+    logo?.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+</script>
