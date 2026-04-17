@@ -1,5 +1,6 @@
 ---
 import {NavigationId} from "../constants/navigation-id.constants.ts";
+import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
 
 enum ICONS {
     code = "code",
@@ -32,10 +33,10 @@ const features = [
 ];
 
 const icons = {
-    [ICONS.code]: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>',
-    [ICONS.rocket]: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>',
-    [ICONS.users]: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>',
-    [ICONS.zap]: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>',
+    [ICONS.code]: CUSTOM_IMGS.code,
+    [ICONS.rocket]: CUSTOM_IMGS.rocket,
+    [ICONS.users]: CUSTOM_IMGS.users,
+    [ICONS.zap]: CUSTOM_IMGS.zap,
 };
 ---
 
@@ -80,7 +81,13 @@ const icons = {
             <div class="features-grid">
                 {features.map((feature) => (
                         <div class="feature-card">
-                            <div class="feature-icon" set:html={icons[feature.icon]}/>
+                            <div class="feature-icon">
+                                <span
+                                        class="icon-mask feature-icon-img"
+                                        style={`--icon-url: url('${icons[feature.icon]}')`}
+                                        aria-hidden="true"
+                                />
+                            </div>
                             <h3 class="feature-title">{feature.title}</h3>
                             <p class="feature-description">{feature.description}</p>
                         </div>
@@ -241,7 +248,17 @@ const icons = {
         background: rgba(104, 208, 208, 0.2);
     }
 
-    .feature-icon :global(svg) {
+    .icon-mask {
+        --icon-url: none;
+        display: block;
+        background-color: currentColor;
+        -webkit-mask: var(--icon-url) center / contain no-repeat;
+        mask: var(--icon-url) center / contain no-repeat;
+    }
+
+    .feature-icon-img {
+        width: 1.5rem;
+        height: 1.5rem;
         color: var(--primary);
     }
 

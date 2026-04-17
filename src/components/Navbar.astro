@@ -1,5 +1,6 @@
 ---
 import {NavigationId} from "../constants/navigation-id.constants.ts";
+import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
 
 const navLinks = [
     {href: `#${NavigationId.ABOUT}`, label: "Sobre mi"},
@@ -41,17 +42,8 @@ const CONTACT_ID = `#${NavigationId.CONTACT}`;
 
             <!-- MOBILE MENU BTN -->
             <button class="mobile-menu-btn" aria-label="Menu">
-                <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                     stroke-width="2">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-                <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                     stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
+                <span class="icon-mask menu-icon" style={`--icon-url: url('${CUSTOM_IMGS.menu}')`} aria-hidden="true"></span>
+                <span class="icon-mask close-icon" style={`--icon-url: url('${CUSTOM_IMGS.close}')`} aria-hidden="true"></span>
             </button>
         </div>
 
@@ -181,6 +173,15 @@ const CONTACT_ID = `#${NavigationId.CONTACT}`;
         background: none;
         border: none;
         cursor: pointer;
+    }
+
+    .icon-mask {
+        --icon-url: none;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: currentColor;
+        -webkit-mask: var(--icon-url) center / contain no-repeat;
+        mask: var(--icon-url) center / contain no-repeat;
     }
 
     @media (min-width: 768px) {

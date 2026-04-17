@@ -1,4 +1,6 @@
 ---
+import {CUSTOM_IMGS} from '../constants/custom-imgs.constants.ts';
+
 const timelineData = [
     {
         year: "dic.2025 - Actualidad",
@@ -47,8 +49,6 @@ const timelineData = [
     },
 ];
 
-const workIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>';
-const educationIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>';
 ---
 
 <section id="experience" class="timeline-section">
@@ -98,7 +98,13 @@ const educationIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="non
 
                             <!-- Icon -->
                             <div class="timeline-icon">
-                                <div class="icon-circle" set:html={item.type === 'work' ? workIcon : educationIcon}/>
+                                <div class="icon-circle">
+                                    <span
+                                            class="icon-mask timeline-icon-img"
+                                            style={`--icon-url: url('${item.type === 'work' ? CUSTOM_IMGS.briefcase : CUSTOM_IMGS.graduationCap}')`}
+                                            aria-hidden="true"
+                                    ></span>
+                                </div>
                             </div>
 
                             <!-- Empty space for alternating layout -->
@@ -330,7 +336,17 @@ const educationIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="non
         justify-content: center;
     }
 
-    .icon-circle :global(svg) {
+    .icon-mask {
+        --icon-url: none;
+        display: block;
+        background-color: currentColor;
+        -webkit-mask: var(--icon-url) center / contain no-repeat;
+        mask: var(--icon-url) center / contain no-repeat;
+    }
+
+    .timeline-icon-img {
+        width: 1rem;
+        height: 1rem;
         color: var(--primary);
     }
 

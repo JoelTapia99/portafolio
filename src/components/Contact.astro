@@ -1,11 +1,6 @@
 ---
 import {SOCIAL_NETWORKS} from "../constants/social-network.constants.ts";
-
-const mailIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>';
-const mapPinIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>';
-const githubIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>';
-const linkedinIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>';
-const sendIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>';
+import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
 ---
 
 <section id="contact" class="contact-section">
@@ -37,7 +32,9 @@ const sendIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" st
         <!-- CONTACT DETAILS -->
         <div class="contact-details">
           <div class="detail-card">
-            <div class="detail-icon" set:html={mailIcon} />
+            <div class="detail-icon">
+              <span class="icon-mask detail-icon-svg" style={`--icon-url: url('${CUSTOM_IMGS.email}')`} aria-hidden="true"></span>
+            </div>
             <div>
               <p class="detail-label">Email</p>
               <a href={SOCIAL_NETWORKS.email} class="detail-link">
@@ -47,7 +44,9 @@ const sendIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" st
           </div>
 
           <div class="detail-card">
-            <div class="detail-icon" set:html={mapPinIcon} />
+            <div class="detail-icon">
+              <span class="icon-mask detail-icon-svg" style={`--icon-url: url('${CUSTOM_IMGS.mapPin}')`} aria-hidden="true"></span>
+            </div>
             <div>
               <p class="detail-label">Ubicación</p>
               <p class="detail-text">Quito, Ecuador</p>
@@ -60,10 +59,10 @@ const sendIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" st
           <p class="social-label">También puedes encontrarme en</p>
           <div class="social-links">
             <a href={SOCIAL_NETWORKS.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link">
-              <span set:html={githubIcon} />
+              <span class="icon-mask social-icon" style={`--icon-url: url('${CUSTOM_IMGS.github}')`} aria-hidden="true"></span>
             </a>
             <a href={SOCIAL_NETWORKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
-              <span set:html={linkedinIcon} />
+              <span class="icon-mask social-icon" style={`--icon-url: url('${CUSTOM_IMGS.linkedin}')`} aria-hidden="true"></span>
             </a>
           </div>
         </div>
@@ -72,7 +71,9 @@ const sendIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" st
       <!-- CONTACT FORM -->
       <div class="form-wrapper">
         <div class="success-message" id="successMessage">
-          <div class="success-icon" set:html={sendIcon} />
+          <div class="success-icon">
+            <span class="icon-mask success-icon-svg" style={`--icon-url: url('${CUSTOM_IMGS.send}')`} aria-hidden="true"></span>
+          </div>
           <h4 class="success-title">Mensaje enviado</h4>
           <p class="success-text">Gracias por contactarme. Te respondere pronto.</p>
         </div>
@@ -101,14 +102,11 @@ const sendIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" st
 
           <button type="submit" class="submit-btn">
             <span class="btn-text">
-              <span set:html={sendIcon} />
+              <span class="icon-mask send-icon" style={`--icon-url: url('${CUSTOM_IMGS.send}')`} aria-hidden="true"></span>
               Enviar mensaje
             </span>
             <span class="btn-loading">
-              <svg class="spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle class="spinner-circle" cx="12" cy="12" r="10" stroke-width="4" />
-                <path class="spinner-path" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor" />
-              </svg>
+              <img class="spinner" src={CUSTOM_IMGS.spinner} alt="" width="20" height="20" aria-hidden="true" />
               Enviando...
             </span>
           </button>
@@ -238,10 +236,22 @@ const sendIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" st
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    color: var(--primary);
   }
 
-  .detail-icon :global(svg) {
-    color: var(--primary);
+  .icon-mask {
+    --icon-url: none;
+    display: block;
+    background-color: currentColor;
+    -webkit-mask: var(--icon-url) center / contain no-repeat;
+    mask: var(--icon-url) center / contain no-repeat;
+  }
+
+  .detail-icon-svg,
+  .social-icon,
+  .send-icon {
+    width: 1.25rem;
+    height: 1.25rem;
   }
 
   .detail-label {
@@ -324,10 +334,12 @@ const sendIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" st
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
+    color: var(--primary);
   }
 
-  .success-icon :global(svg) {
-    color: var(--primary);
+  .success-icon-svg {
+    width: 1.25rem;
+    height: 1.25rem;
   }
 
   .success-title {
@@ -442,6 +454,8 @@ const sendIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" st
   }
 
   .spinner {
+    width: 1.25rem;
+    height: 1.25rem;
     animation: spin 1s linear infinite;
   }
 
@@ -454,13 +468,6 @@ const sendIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" st
     }
   }
 
-  .spinner-circle {
-    opacity: 0.25;
-  }
-
-  .spinner-path {
-    opacity: 0.75;
-  }
 </style>
 
 <script>
