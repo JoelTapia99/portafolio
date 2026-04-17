@@ -1,6 +1,7 @@
 ---
 import {NavigationId} from "../constants/navigation-id.constants.ts";
 import {SOCIAL_NETWORKS} from '../constants/social-network.constants.ts';
+import {LINK} from "../constants/link.constants.ts";
 ---
 
 <section class="hero">
@@ -47,8 +48,8 @@ import {SOCIAL_NETWORKS} from '../constants/social-network.constants.ts';
                     <polyline points="19 12 12 19 5 12"></polyline>
                 </svg>
             </a>
-            <a href={`#${NavigationId.CONTACT}`} class="btn btn-outline">
-                Contactar
+            <a href={LINK.CSV} target="_blank" class="btn btn-outline">
+                Mi curriculum
             </a>
         </div>
 
