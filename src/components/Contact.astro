@@ -70,47 +70,12 @@ import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
 
       <!-- CONTACT FORM -->
       <div class="form-wrapper">
-        <div class="success-message" id="successMessage">
-          <div class="success-icon">
-            <span class="icon-mask success-icon-svg" style={`--icon-url: url('${CUSTOM_IMGS.send}')`} aria-hidden="true"></span>
-          </div>
-          <h4 class="success-title">Mensaje enviado</h4>
-          <p class="success-text">Gracias por contactarme. Te respondere pronto.</p>
-        </div>
-
-        <form id="contactForm" class="contact-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name" class="form-label">Nombre</label>
-              <input id="name" name="name" type="text" placeholder="Tu nombre" required class="form-input" />
-            </div>
-            <div class="form-group">
-              <label for="email" class="form-label">Email</label>
-              <input id="email" name="email" type="email" placeholder="tu@email.com" required class="form-input" />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="subject" class="form-label">Asunto</label>
-            <input id="subject" name="subject" type="text" placeholder="De que quieres hablar?" required class="form-input" />
-          </div>
-
-          <div class="form-group">
-            <label for="message" class="form-label">Mensaje</label>
-            <textarea id="message" name="message" placeholder="Cuentame sobre tu proyecto..." rows="5" required class="form-textarea"></textarea>
-          </div>
-
-          <button type="submit" class="submit-btn">
-            <span class="btn-text">
-              <span class="icon-mask send-icon" style={`--icon-url: url('${CUSTOM_IMGS.send}')`} aria-hidden="true"></span>
-              Enviar mensaje
-            </span>
-            <span class="btn-loading">
-              <img class="spinner" src={CUSTOM_IMGS.spinner} alt="" width="20" height="20" aria-hidden="true" />
-              Enviando...
-            </span>
-          </button>
-        </form>
+        <img
+          class="contact-image"
+          src={CUSTOM_IMGS.hero}
+          alt="Ilustracion de portafolio"
+          loading="lazy"
+        />
       </div>
     </div>
   </div>
@@ -310,6 +275,15 @@ import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
     border: 1px solid rgba(49, 48, 56, 0.5);
     backdrop-filter: blur(4px);
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-image {
+    width: 100%;
+    height: auto;
+    max-width: 28rem;
   }
 
   .success-message {
@@ -470,34 +444,3 @@ import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
 
 </style>
 
-<script>
-  const form = document.getElementById('contactForm') as HTMLFormElement;
-  const successMessage = document.getElementById('successMessage');
-  const submitBtn = form?.querySelector('button[type="submit"]');
-
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    if (!submitBtn) return;
-
-    // Add loading state
-    submitBtn.classList.add('loading');
-    submitBtn.setAttribute('disabled', 'true');
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    // Show success message
-    form.classList.add('hide');
-    successMessage?.classList.add('show');
-
-    // Reset after 3 seconds
-    setTimeout(() => {
-      form.classList.remove('hide');
-      successMessage?.classList.remove('show');
-      submitBtn.classList.remove('loading');
-      submitBtn.removeAttribute('disabled');
-      form.reset();
-    }, 3000);
-  });
-</script>

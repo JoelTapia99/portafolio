@@ -6,6 +6,7 @@ export const CUSTOM_IMGS = {
   email: '/icons/email.icon.svg',
   externalLink: '/icons/external-link.icon.svg',
   github: '/icons/github.icon.svg',
+  hero: '/icons/hero.svg',
   graduationCap: '/icons/graduation-cap.icon.svg',
   linkedin: '/icons/linkedin.icon.svg',
   mapPin: '/icons/map-pin.icon.svg',
