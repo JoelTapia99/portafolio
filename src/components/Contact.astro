@@ -37,7 +37,7 @@ import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
             </div>
             <div>
               <p class="detail-label">Email</p>
-              <a href={SOCIAL_NETWORKS.email} class="detail-link">
+              <a href={SOCIAL_NETWORKS.email} class="detail-link email-copy" data-email="joelts159@gmail.com">
                   joelts159@gmail.com
               </a>
             </div>
@@ -442,5 +442,43 @@ import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
     }
   }
 
+  .copy-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(1rem);
+    background: var(--primary);
+    color: var(--background);
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s;
+    z-index: 9999;
+  }
+
+  .copy-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
 </style>
+
+<div class="copy-toast" id="copyToast">Copiado ✓</div>
+
+<script>
+  const emailLink = document.querySelector('.email-copy') as HTMLAnchorElement;
+  const toast = document.getElementById('copyToast');
+
+  emailLink?.addEventListener('click', (e) => {
+    e.preventDefault();
+    const email = emailLink.dataset.email ?? '';
+    navigator.clipboard.writeText(email).then(() => {
+      toast?.classList.add('show');
+      setTimeout(() => toast?.classList.remove('show'), 2000);
+    });
+  });
+</script>
 
