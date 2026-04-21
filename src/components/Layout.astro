@@ -2,7 +2,6 @@
 import { METADATA } from '../constants/metadata.constants';
 import { HOST_URL } from '../constants/app.constants';
 import '../styles/global.css';
-import Nav from './Nav/Nav.astro';
 
 // ========= TYPES =========
 interface LayoutProps {
@@ -21,19 +20,28 @@ const _title = title ? `${title} | Joel Tapia` : 'Joel Tapia';
     <meta name='viewport' content='width=device-width' />
     <link rel='icon' type='image/svg+xml' href='/favicon.png' />
     <meta name='generator' content={Astro.generator} />
+    <meta name='description' content={METADATA.description} />
     <!-- Open Graph -->
-    <meta property='og:title' content={METADATA.tile} />
+    <meta property='og:title' content={METADATA.title} />
     <meta property='og:description' content={METADATA.description} />
     <meta property='og:url' content={METADATA.url} />
     <meta property='og:type' content={METADATA.type} />
+    <meta property='og:site_name' content={METADATA.siteName} />
+    <meta property='og:locale' content={METADATA.locale} />
     <meta property='og:image' content={METADATA.image} />
+    <meta property='og:image:alt' content={METADATA.imageAlt} />
+    <!-- Twitter -->
+    <meta name='twitter:card' content={METADATA.twitterCard} />
+    <meta name='twitter:title' content={METADATA.title} />
+    <meta name='twitter:description' content={METADATA.description} />
+    <meta name='twitter:image' content={METADATA.image} />
+    <meta name='twitter:image:alt' content={METADATA.imageAlt} />
     <!-- canonical -->
     <link rel='canonical' href={HOST_URL} />
 
     <title>{_title}</title>
   </head>
   <body class='bg-pattern'>
-    <Nav />
     <div class='max-w-11/12 flex content-center border-2'>
       <slot />
     </div>
