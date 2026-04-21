@@ -1,0 +1,33 @@
+---
+import Image from 'astro/components/Image.astro';
+import type { IImage } from '../types/img.type';
+
+// ========= TYPES =========
+export interface ImgProps {
+  image: IImage;
+  styles?: string;
+}
+
+// ========= LOGIC =========
+const { image, styles } = Astro.props as ImgProps;
+const ext = image.src.split('.').pop()?.toLowerCase();
+const useHTMLImg = ['svg', 'ico', 'gif'].includes(ext ?? '');
+---
+
+{
+  useHTMLImg ?
+    <img
+      class={styles}
+      src={image.src}
+      alt={image.alt}
+      width={image.width}
+      height={image.height}
+    />
+  : <Image
+      class={styles}
+      src={image.src}
+      alt={image.alt}
+      width={image.width}
+      height={image.height}
+    />
+}

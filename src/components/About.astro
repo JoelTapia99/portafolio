@@ -1,0 +1,276 @@
+---
+import {NavigationId} from "../constants/navigation-id.constants.ts";
+import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
+
+enum ICONS {
+    code = "code",
+    rocket = "rocket",
+    users = "users",
+    zap = "zap",
+}
+
+const features = [
+    {
+        icon: ICONS.code,
+        title: "Buenas prácticas y código Limpio",
+        description: "Escribo código mantenible y escalable enfocándome en los principios SOLID.",
+    },
+    {
+        icon: ICONS.rocket,
+        title: "Performance",
+        description: "Optimizo mis desarrollos para obtener la mejor velocidad y experiencia de usuario.",
+    },
+    {
+        icon: ICONS.users,
+        title: "Colaboración",
+        description: "Trabajo en equipo usando metodologías ágiles y comunicación efectiva.",
+    },
+    {
+        icon: ICONS.zap,
+        title: "Innovación",
+        description: "Me mantengo actualizado con las últimas tecnologías y tendencias del desarrollo.",
+    },
+];
+
+const icons = {
+    [ICONS.code]: CUSTOM_IMGS.code,
+    [ICONS.rocket]: CUSTOM_IMGS.rocket,
+    [ICONS.users]: CUSTOM_IMGS.users,
+    [ICONS.zap]: CUSTOM_IMGS.zap,
+};
+---
+
+<section id={NavigationId.ABOUT} class="about-section">
+    <div class="about-bg"></div>
+
+    <div class="about-container">
+        <!-- SECTION HEADER -->
+        <div class="section-header">
+            <span class="section-tag">Sobre mi</span>
+            <h2 class="section-title">
+                Desarrollador apasionado por crear{" "}
+                <span class="text-primary">experiencias digitales</span>
+            </h2>
+            <p class="section-description">
+                Con mas de 4 años de experiencia en desarrollo web y móbil, me especializo en Angular, Laravel y React
+                Native para construir soluciones innovadoras y eficientes.
+            </p>
+        </div>
+
+        <div class="about-grid">
+            <!-- Left - Story -->
+            <div class="story-column">
+                <div class="story-card">
+                    <p class="story-text">
+                        Siempre he estado fascinado por la tecnología y me gusta crear, el mundo de la programación me
+                        permite combinar ambas cosas. Mi objetivo a largo plazo es seguir aprendiendo de arquitectura y
+                        patrones de diseño de software.
+                    </p>
+                </div>
+                <!--<div class="story-card">-->
+                <!--    <p class="story-text">-->
+                <!--        Actualmente me enfoco en desarrollo Full Stack con React y-->
+                <!--        Node.js, creando aplicaciones web que combinan diseno elegante-->
+                <!--        con funcionalidad robusta. Mi objetivo es siempre entregar-->
+                <!--        productos que superen las expectativas.-->
+                <!--    </p>-->
+                <!--</div>-->
+            </div>
+
+            <!-- Right - Features grid -->
+            <div class="features-grid">
+                {features.map((feature) => (
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <span
+                                        class="icon-mask feature-icon-img"
+                                        style={`--icon-url: url('${icons[feature.icon]}')`}
+                                        aria-hidden="true"
+                                />
+                            </div>
+                            <h3 class="feature-title">{feature.title}</h3>
+                            <p class="feature-description">{feature.description}</p>
+                        </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    :root {
+        --background: oklch(0.13 0.02 260);
+        --foreground: oklch(0.95 0 0);
+        --primary: oklch(0.65 0.2 180);
+        --muted-foreground: oklch(0.65 0 0);
+        --secondary: oklch(0.22 0.02 260);
+        --border: oklch(0.28 0.02 260);
+        --card: oklch(0.16 0.02 260);
+    }
+
+    .about-section {
+        padding: 6rem 0;
+        position: relative;
+    }
+
+    .about-bg {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, var(--background), rgba(44, 43, 51, 0.2), var(--background));
+    }
+
+    .about-container {
+        position: relative;
+        max-width: 1152px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    @media (min-width: 640px) {
+        .about-container {
+            padding: 0 1.5rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .about-container {
+            padding: 0 2rem;
+        }
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .section-tag {
+        color: var(--primary);
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .section-title {
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+        text-wrap: balance;
+        color: var(--foreground);
+    }
+
+    @media (min-width: 640px) {
+        .section-title {
+            font-size: 2.25rem;
+        }
+    }
+
+    .text-primary {
+        color: var(--primary);
+    }
+
+    .section-description {
+        max-width: 42rem;
+        margin: 0 auto;
+        color: var(--muted-foreground);
+        font-size: 1.125rem;
+    }
+
+    .about-grid {
+        display: grid;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+        .about-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .story-column {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .story-card {
+        padding: 1.5rem;
+        border-radius: 1rem;
+        background: rgba(38, 37, 45, 0.5);
+        border: 1px solid rgba(49, 48, 56, 0.5);
+        backdrop-filter: blur(4px);
+    }
+
+    .story-text {
+        color: var(--muted-foreground);
+        line-height: 1.75;
+    }
+
+    .features-grid {
+        display: grid;
+        gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+        .features-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+        border-radius: 1rem;
+        background: rgba(38, 37, 45, 0.5);
+        border: 1px solid rgba(49, 48, 56, 0.5);
+        backdrop-filter: blur(4px);
+        transition: border-color 0.2s;
+    }
+
+    .feature-card:hover {
+        border-color: rgba(104, 208, 208, 0.5);
+    }
+
+    .feature-icon {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 0.75rem;
+        background: rgba(104, 208, 208, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        transition: background 0.2s;
+    }
+
+    .feature-card:hover .feature-icon {
+        background: rgba(104, 208, 208, 0.2);
+    }
+
+    .icon-mask {
+        --icon-url: none;
+        display: block;
+        background-color: currentColor;
+        -webkit-mask: var(--icon-url) center / contain no-repeat;
+        mask: var(--icon-url) center / contain no-repeat;
+    }
+
+    .feature-icon-img {
+        width: 1.5rem;
+        height: 1.5rem;
+        color: var(--primary);
+    }
+
+    .feature-title {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--foreground);
+    }
+
+    .feature-description {
+        font-size: 0.875rem;
+        color: var(--muted-foreground);
+    }
+</style>

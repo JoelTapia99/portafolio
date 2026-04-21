@@ -1,0 +1,15 @@
+---
+import {CustomIcons} from "../enums/custom-icons.enum.ts";
+
+// ========= TYPES =========
+interface CustomIconsProps {
+    name: CustomIcons
+}
+
+// ========= LOGIC =========
+const { name } = Astro.props as CustomIconsProps;
+
+if (!(name in CustomIcons)) {
+    return null
+}
+---

@@ -1,0 +1,21 @@
+export const CUSTOM_IMGS = {
+  arrowDown: '/icons/arrow-down.icon.svg',
+  briefcase: '/icons/briefcase.icon.svg',
+  close: '/icons/close.icon.svg',
+  code: '/icons/code.icon.svg',
+  email: '/icons/email.icon.svg',
+  externalLink: '/icons/external-link.icon.svg',
+  github: '/icons/github.icon.svg',
+  hero: '/icons/hero.svg',
+  keycapBw: '/icons/keycap-bw.svg',
+  graduationCap: '/icons/graduation-cap.icon.svg',
+  linkedin: '/icons/linkedin.icon.svg',
+  mapPin: '/icons/map-pin.icon.svg',
+  menu: '/icons/menu.icon.svg',
+  rocket: '/icons/rocket.icon.svg',
+  send: '/icons/send.icon.svg',
+  spinner: '/icons/spinner.icon.svg',
+  users: '/icons/users.icon.svg',
+  zap: '/icons/zap.icon.svg',
+} as const;
+

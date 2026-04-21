@@ -1,0 +1,319 @@
+---
+import {NavigationId} from "../constants/navigation-id.constants.ts";
+import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
+
+const navLinks = [
+    {href: `#${NavigationId.ABOUT}`, label: "Sobre mi"},
+    {href: `#${NavigationId.SKILLS}`, label: "Habilidades"},
+    {href: `#${NavigationId.EXPERIENCE}`, label: "Experiencia"},
+    {href: `#${NavigationId.PROJECTS}`, label: "Proyectos"},
+    {href: `#${NavigationId.CONTACT}`, label: "Contacto"},
+];
+
+const CONTACT_ID = `#${NavigationId.CONTACT}`;
+---
+
+<header id={NavigationId.NAVBAR} class="navbar">
+    <nav class="nav-container">
+        <div class="nav-content">
+            <!-- LOGO -->
+            <!-- TODO: Replace for logo -->
+            <a href="#" class="logo">
+                <span class="bracket">&lt;</span>
+                Joel
+                <span class="bracket">/&gt;</span>
+            </a>
+
+            <!-- DESKTOP BTN -->
+            <div class="nav-links">
+                {navLinks.map((link) => (
+                        <a href={link.href} class="nav-link">
+                            {link.label}
+                        </a>
+                ))}
+            </div>
+
+            <!-- CTA -->
+            <div class="nav-cta">
+                <a href={CONTACT_ID} class="btn btn-primary">
+                    Hablemos 😎
+                </a>
+            </div>
+
+            <!-- MOBILE MENU BTN -->
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span class="icon-mask menu-icon" style={`--icon-url: url('${CUSTOM_IMGS.menu}')`} aria-hidden="true"></span>
+                <span class="icon-mask close-icon" style={`--icon-url: url('${CUSTOM_IMGS.close}')`} aria-hidden="true"></span>
+            </button>
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div class="mobile-menu">
+            <div class="mobile-menu-content">
+                {navLinks.map((link) => (
+                        <a href={link.href} class="mobile-link">
+                            {link.label}
+                        </a>
+                ))}
+                <a href={CONTACT_ID} class="btn btn-primary mobile-cta">
+                    Hablemos 😎
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- OVERLAY -->
+    <div class="overlay"></div>
+</header>
+
+<style>
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled,
+    .navbar.menu-open {
+        background: rgba(21, 20, 26, 0.95);
+        backdrop-filter: blur(24px);
+        border-bottom: 1px solid rgba(49, 48, 56, 0.5);
+    }
+
+    .nav-container {
+        max-width: 1152px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .nav-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 4rem;
+    }
+
+    .logo {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--foreground);
+        text-decoration: none;
+    }
+
+    .bracket {
+        color: var(--primary);
+    }
+
+    .nav-links {
+        display: none;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    @media (min-width: 768px) {
+        .nav-links {
+            display: flex;
+        }
+    }
+
+    .nav-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        color: var(--muted-foreground);
+        text-decoration: none;
+        border-radius: 0.5rem;
+        transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+        color: var(--foreground);
+        background: rgba(44, 43, 51, 0.5);
+    }
+
+    .nav-cta {
+        display: none;
+    }
+
+    @media (min-width: 768px) {
+        .nav-cta {
+            display: block;
+        }
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        transition: all 0.2s;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn-primary {
+        background: var(--primary);
+        color: var(--background);
+    }
+
+    .btn-primary:hover {
+        background: oklch(0.6 0.18 180);
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        padding: 0.5rem;
+        color: var(--foreground);
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .icon-mask {
+        --icon-url: none;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: currentColor;
+        -webkit-mask: var(--icon-url) center / contain no-repeat;
+        mask: var(--icon-url) center / contain no-repeat;
+    }
+
+    @media (min-width: 768px) {
+        .mobile-menu-btn {
+            display: none;
+        }
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .close-icon {
+        display: none;
+    }
+
+    .navbar.menu-open .menu-icon {
+        display: none;
+    }
+
+    .navbar.menu-open .close-icon {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: none;
+        padding: 1rem 0;
+        border-top: 1px solid rgba(49, 48, 56, 0.5);
+    }
+
+    .navbar.menu-open .mobile-menu {
+        display: block;
+    }
+
+    @media (min-width: 768px) {
+        .mobile-menu {
+            display: none !important;
+        }
+    }
+
+    .mobile-menu-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .mobile-link {
+        padding: 0.75rem 1rem;
+        color: var(--muted-foreground);
+        text-decoration: none;
+        border-radius: 0.5rem;
+        transition: all 0.2s;
+        text-align: left;
+    }
+
+    .mobile-link:hover {
+        color: var(--foreground);
+        background: rgba(44, 43, 51, 0.5);
+    }
+
+    .mobile-cta {
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 40;
+    }
+
+    .navbar.menu-open .overlay {
+        display: block;
+    }
+
+    @media (min-width: 768px) {
+        .overlay {
+            display: none !important;
+        }
+    }
+</style>
+
+<script>
+    const navbar = document.getElementById('navbar');
+
+    //   ============================================
+    //    START - HANDLE SCROLL EFFECT
+    //   ============================================
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) navbar?.classList.add('scrolled');
+        else navbar?.classList.remove('scrolled');
+    });
+    //   ============================================
+    //    END - HANDLE SCROLL EFFECT
+    //   ============================================
+
+    //   ============================================
+    //    START - HANDLE MOBILE MENU
+    //   ============================================
+    const menuBtn = navbar?.querySelector('.mobile-menu-btn');
+    const overlay = navbar?.querySelector('.overlay');
+    const mobileLinks = navbar?.querySelectorAll('.mobile-link, .mobile-cta');
+    const toggleMenu = () => navbar?.classList.toggle('menu-open');
+    const closeMenu = () => navbar?.classList.remove('menu-open');
+
+    menuBtn?.addEventListener('click', toggleMenu);
+    overlay?.addEventListener('click', closeMenu);
+    mobileLinks?.forEach(link => link.addEventListener('click', closeMenu));
+    //   ============================================
+    //    END - HANDLE MOBILE MENU
+    //   ============================================
+
+    //   ============================================
+    //    START - HANDLE SMOOTH SCROLL FOR NAV LINKS
+    //   ============================================
+    const allLinks = navbar?.querySelectorAll('a[href^="#"]');
+    allLinks?.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (href && href !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({behavior: 'smooth'});
+                } else if (href === '#') {
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                }
+            }
+        });
+    });
+    //   ============================================
+    //    END - HANDLE SMOOTH SCROLL FOR NAV LINKS
+    //   ============================================
+</script>
