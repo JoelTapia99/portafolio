@@ -8,7 +8,7 @@ export const METADATA = {
   type: "website",
   siteName: "Joel Tapia",
   locale: "es_EC",
-  image: `${HOST_URL}/og-image.svg`,
+  image: `${HOST_URL}/og-image.png`,
   imageAlt: "Portafolio de Joel Tapia",
   twitterCard: "summary_large_image",
 };
