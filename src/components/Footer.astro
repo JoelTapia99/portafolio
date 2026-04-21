@@ -10,9 +10,7 @@ const currentYear = new Date().getFullYear();
             <!-- Logo and copyright -->
             <div class="footer-brand">
                 <a href="#" class="logo">
-                    <span class="bracket">&lt;</span>
-                    Carlos
-                    <span class="bracket">/&gt;</span>
+                    <img src={CUSTOM_IMGS.keycapBw} alt="Logo de Joel Tapia" class="logo-image" loading="lazy" />
                 </a>
                 <p class="copyright">
                     {currentYear} Joel Tapia. Todos los derechos reservados.
@@ -34,17 +32,6 @@ const currentYear = new Date().getFullYear();
                 </a>
             </div>
         </div>
-
-        <!-- Bottom text -->
-        <!--<div class="footer-bottom">-->
-        <!--    <p class="footer-text">-->
-        <!--        Diseno inspirado en{" "}-->
-        <!--        <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="footer-link">-->
-        <!--            astro.build-->
-        <!--        </a>-->
-        <!--        {" "}| Construido con Astro.js-->
-        <!--    </p>-->
-        <!--</div>-->
     </div>
 </footer>
 
@@ -105,10 +92,15 @@ const currentYear = new Date().getFullYear();
     }
 
     .logo {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: var(--foreground);
+        display: inline-flex;
+        align-items: center;
         text-decoration: none;
+    }
+
+    .logo-image {
+        width: 2.75rem;
+        height: auto;
+        display: block;
     }
 
     .bracket {

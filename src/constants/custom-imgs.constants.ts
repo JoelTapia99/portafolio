@@ -7,6 +7,7 @@ export const CUSTOM_IMGS = {
   externalLink: '/icons/external-link.icon.svg',
   github: '/icons/github.icon.svg',
   hero: '/icons/hero.svg',
+  keycapBw: '/icons/keycap-bw.svg',
   graduationCap: '/icons/graduation-cap.icon.svg',
   linkedin: '/icons/linkedin.icon.svg',
   mapPin: '/icons/map-pin.icon.svg',
