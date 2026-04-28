@@ -1,50 +1,54 @@
 ---
 import {CUSTOM_IMGS} from '../constants/custom-imgs.constants.ts';
+import {useTranslations} from "../utils/lang.utils.ts";
+import type {Lang} from "../i18n/ui.ts";
+
+interface Props {
+    lang: Lang;
+}
+
+const {lang} = Astro.props;
+const t = useTranslations(lang);
 
 const timelineData = [
     {
-        year: "dic.2025 - Actualidad",
-        title: "Ingeniero IT",
-        company: "TATA Consultancy Services",
-        description:
-            "Lidero el desarrollo de aplicaciones web escalables usando Next.js y microservicios. Mentor de desarrolladores junior y arquitecto de soluciones.",
+        year: t('timeline.item1.year'),
+        title: t('timeline.item1.title'),
+        company: t('timeline.item1.company'),
+        description: t('timeline.item1.description'),
         type: "work",
         tags: ["Angular", "TypeScript", "HTML/CSS", "PrimeNG", "Figma"],
     },
     {
-        year: "jul.2022 - dic.2025",
-        title: "Programador FullStack",
-        company: "Formos EC",
-        description:
-            "Cree interfaces de usuario interactivas para clientes de alto perfil. Implementacion de disenos pixel-perfect y optimizacion de rendimiento.",
+        year: t('timeline.item2.year'),
+        title: t('timeline.item2.title'),
+        company: t('timeline.item2.company'),
+        description: t('timeline.item2.description'),
         type: "work",
-        tags: ["React Navive", "Angular", "SpringBoot", "HTML/CSS", "TypeScript", "Next.js", "Groovy", "Grails"],
+        tags: ["React Native", "Angular", "SpringBoot", "HTML/CSS", "TypeScript", "Next.js", "Groovy", "Grails"],
     },
     {
-        year: "jun.2021 - abr.2022",
-        title: "Programador autónomo",
-        company: "Programador autónomo",
-        description:
-            "Cree interfaces de usuario interactivas para clientes de alto perfil. Implementacion de disenos pixel-perfect y optimizacion de rendimiento.",
+        year: t('timeline.item3.year'),
+        title: t('timeline.item3.title'),
+        company: t('timeline.item3.company'),
+        description: t('timeline.item3.description'),
         type: "work",
         tags: ["TypeScript", "HTML/CSS", "PHP", "MySQL", "Laravel", "Angular", "Boostrap", "PrimeNG"],
     },
     {
-        year: "ago.2019 - abr.2021",
-        title: "Programador FullStack",
-        company: "LINKEAR S.A",
-        description:
-            "Mis primeros pasos profesionales. Aprendi las bases del desarrollo web moderno y metodologias agiles trabajando en proyectos reales.",
-        type: "Pasantía",
+        year: t('timeline.item4.year'),
+        title: t('timeline.item4.title'),
+        company: t('timeline.item4.company'),
+        description: t('timeline.item4.description'),
+        type: "internship",
         tags: ["TypeScript", "HTML/CSS", "PHP", "MySQL", "Laravel", "Angular", "Boostrap"],
     },
     {
-        year: "feb.2019 - abr.2019",
-        title: "Desarrollador Junior",
-        company: "Ministerio de Transporte y Obras Públicas",
-        description:
-            "Investigación de tecnologías de Desarrollo de software para encontrar la tecnología que cubra mejor las necesidades de la empresa de manera efectiva.",
-        type: "Pasantía",
+        year: t('timeline.item5.year'),
+        title: t('timeline.item5.title'),
+        company: t('timeline.item5.company'),
+        description: t('timeline.item5.description'),
+        type: "internship",
         tags: ["Investigación", "Estimación", "Maquetación"],
     },
 ];
@@ -57,11 +61,10 @@ const timelineData = [
     <div class="timeline-container">
         <!-- Section header -->
         <div class="section-header">
-            <span class="section-tag">Experiencia</span>
-            <h2 class="section-title">Mi trayectoria profesional</h2>
+            <span class="section-tag">{t('timeline.tag')}</span>
+            <h2 class="section-title">{t('timeline.title')}</h2>
             <p class="section-description">
-                Un recorrido por mi carrera, desde mis inicios hasta donde me
-                encuentro hoy.
+                {t('timeline.description')}
             </p>
         </div>
 

@@ -1,6 +1,8 @@
 ---
 import {SOCIAL_NETWORKS} from '../constants/social-network.constants.ts';
 import {CUSTOM_IMGS} from '../constants/custom-imgs.constants.ts';
+import {HOST_URL} from "../constants/app.constants.ts";
+
 const currentYear = new Date().getFullYear();
 ---
 
@@ -9,7 +11,7 @@ const currentYear = new Date().getFullYear();
         <div class="footer-content">
             <!-- Logo and copyright -->
             <div class="footer-brand">
-                <a href="#" class="logo">
+                <a href={HOST_URL} class="logo">
                     <img src={CUSTOM_IMGS.keycapBw} alt="Logo de Joel Tapia" class="logo-image" loading="lazy" />
                 </a>
                 <p class="copyright">

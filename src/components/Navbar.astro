@@ -1,12 +1,26 @@
 ---
 import {NavigationId} from "../constants/navigation-id.constants.ts";
 import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
+import {useTranslations, getLocalePath} from "../utils/lang.utils.ts";
+import type {Lang} from "../i18n/ui.ts";
+import {HOST_URL} from "../constants/app.constants.ts";
+import {Languages} from "../enums/lang.enum.ts";
+
+interface Props {
+    lang: Lang;
+}
+
+const {lang} = Astro.props;
+const t = useTranslations(lang);
+const altLang = lang === Languages.ES ? Languages.EN : Languages.ES;
+const altLangLabel = lang === Languages.ES ? 'EN' : 'ES';
+const altLangPath = getLocalePath(altLang);
 
 const navLinks = [
-    {href: `#${NavigationId.ABOUT}`, label: "Sobre mi"},
-    {href: `#${NavigationId.SKILLS}`, label: "Habilidades"},
-    {href: `#${NavigationId.EXPERIENCE}`, label: "Experiencia"},
-    {href: `#${NavigationId.CONTACT}`, label: "Contacto"},
+    {href: `#${NavigationId.ABOUT}`, label: t('nav.about')},
+    {href: `#${NavigationId.SKILLS}`, label: t('nav.skills')},
+    {href: `#${NavigationId.EXPERIENCE}`, label: t('nav.experience')},
+    {href: `#${NavigationId.CONTACT}`, label: t('nav.contact')},
 ];
 
 const CONTACT_ID = `#${NavigationId.CONTACT}`;
@@ -16,8 +30,7 @@ const CONTACT_ID = `#${NavigationId.CONTACT}`;
     <nav class="nav-container">
         <div class="nav-content">
             <!-- LOGO -->
-            <!-- TODO: Replace for logo -->
-            <a href="#" class="logo">
+            <a href={HOST_URL} class="logo">
                 <span class="bracket">&lt;</span>
                 Joel
                 <span class="bracket">/&gt;</span>
@@ -32,18 +45,26 @@ const CONTACT_ID = `#${NavigationId.CONTACT}`;
                 ))}
             </div>
 
-            <!-- CTA -->
+            <!-- CTA + LANG SWITCHER -->
             <div class="nav-cta">
+                <a href={altLangPath} class="btn btn-lang" aria-label={`Switch to ${altLangLabel}`}>
+                    {altLangLabel}
+                </a>
                 <a href={CONTACT_ID} class="btn btn-primary">
-                    Hablemos 😎
+                    {t('nav.cta')}
                 </a>
             </div>
 
-            <!-- MOBILE MENU BTN -->
-            <button class="mobile-menu-btn" aria-label="Menu">
-                <span class="icon-mask menu-icon" style={`--icon-url: url('${CUSTOM_IMGS.menu}')`} aria-hidden="true"></span>
-                <span class="icon-mask close-icon" style={`--icon-url: url('${CUSTOM_IMGS.close}')`} aria-hidden="true"></span>
-            </button>
+            <!-- MOBILE MENU BTN + LANG -->
+            <div class="mobile-actions">
+                <a href={altLangPath} class="btn btn-lang" aria-label={`Switch to ${altLangLabel}`}>
+                    {altLangLabel}
+                </a>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span class="icon-mask menu-icon" style={`--icon-url: url('${CUSTOM_IMGS.menu}')`} aria-hidden="true"></span>
+                    <span class="icon-mask close-icon" style={`--icon-url: url('${CUSTOM_IMGS.close}')`} aria-hidden="true"></span>
+                </button>
+            </div>
         </div>
 
         <!-- MOBILE MENU -->
@@ -55,7 +76,7 @@ const CONTACT_ID = `#${NavigationId.CONTACT}`;
                         </a>
                 ))}
                 <a href={CONTACT_ID} class="btn btn-primary mobile-cta">
-                    Hablemos 😎
+                    {t('nav.cta')}
                 </a>
             </div>
         </div>
@@ -134,11 +155,13 @@ const CONTACT_ID = `#${NavigationId.CONTACT}`;
 
     .nav-cta {
         display: none;
+        align-items: center;
+        gap: 0.5rem;
     }
 
     @media (min-width: 768px) {
         .nav-cta {
-            display: block;
+            display: flex;
         }
     }
 
@@ -165,6 +188,27 @@ const CONTACT_ID = `#${NavigationId.CONTACT}`;
         background: oklch(0.6 0.18 180);
     }
 
+    .btn-lang {
+        background: transparent;
+        border: 1px solid rgba(49, 48, 56, 0.7);
+        color: var(--muted-foreground);
+        padding: 0.375rem 0.75rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+    }
+
+    .btn-lang:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+
+    .mobile-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
     .mobile-menu-btn {
         display: block;
         padding: 0.5rem;
@@ -184,7 +228,7 @@ const CONTACT_ID = `#${NavigationId.CONTACT}`;
     }
 
     @media (min-width: 768px) {
-        .mobile-menu-btn {
+        .mobile-actions {
             display: none;
         }
     }

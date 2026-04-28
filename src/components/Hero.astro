@@ -3,6 +3,15 @@ import {NavigationId} from "../constants/navigation-id.constants.ts";
 import {SOCIAL_NETWORKS} from '../constants/social-network.constants.ts';
 import {LINK} from "../constants/link.constants.ts";
 import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
+import {useTranslations} from "../utils/lang.utils.ts";
+import type {Lang} from "../i18n/ui.ts";
+
+interface Props {
+    lang: Lang;
+}
+
+const {lang} = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section class="hero">
@@ -26,27 +35,26 @@ import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
 
         <!-- Main heading -->
         <h1 class="heading">
-            <span class="text-foreground">Hola, soy </span>
+            <span class="text-foreground">{t('hero.greeting')}</span>
             <span class="gradient-text">Joel Tapia</span>
         </h1>
 
         <!-- Subtitle -->
-        <p class="subtitle">Full Stack Developer</p>
+        <p class="subtitle">{t('hero.subtitle')}</p>
 
         <!-- Description -->
         <p class="description">
-            Creo experiencias digitales excepcionales. Especializado en Angular,
-            Laravel y ReactNative.
+            {t('hero.description')}
         </p>
 
         <!-- CTA Buttons -->
         <div class="cta-buttons">
             <a href={`#${NavigationId.PROJECTS}`} class="btn btn-primary">
-                Ver proyectos
+                {t('hero.cta.projects')}
                 <span class="icon-mask arrow-icon" style={`--icon-url: url('${CUSTOM_IMGS.arrowDown}')`} aria-hidden="true"></span>
             </a>
             <a href={LINK.CSV} target="_blank" class="btn btn-outline">
-                Mi curriculum
+                {t('hero.cta.resume')}
             </a>
         </div>
 

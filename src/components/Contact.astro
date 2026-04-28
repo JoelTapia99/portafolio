@@ -1,6 +1,15 @@
 ---
 import {SOCIAL_NETWORKS} from "../constants/social-network.constants.ts";
 import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
+import {useTranslations} from "../utils/lang.utils.ts";
+import type {Lang} from "../i18n/ui.ts";
+
+interface Props {
+    lang: Lang;
+}
+
+const {lang} = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section id="contact" class="contact-section">
@@ -9,11 +18,10 @@ import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
   <div class="contact-container">
     <!-- SECTION HEADER -->
     <div class="section-header">
-      <span class="section-tag">Contacto</span>
-      <h2 class="section-title">Trabajemos juntos</h2>
+      <span class="section-tag">{t('contact.tag')}</span>
+      <h2 class="section-title">{t('contact.title')}</h2>
       <p class="section-description">
-        Tienes un proyecto en mente? Me encantaria escuchar sobre el.
-        Enviame un mensaje y te respondere lo antes posible.
+        {t('contact.description')}
       </p>
     </div>
 
@@ -21,9 +29,9 @@ import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
       <!-- CONTACT INFO -->
       <div class="contact-info">
         <div>
-          <h3 class="info-title">Hablemos de tu proyecto</h3>
+          <h3 class="info-title">{t('contact.info.title')}</h3>
           <p class="info-text">
-              Ya sea que necesites un sitio web, una aplicación, o quieras discutir una idea, estoy aquí para ayudarte. Responde todos los mensajes en menos de 24 horas.
+            {t('contact.info.text')}
           </p>
         </div>
 
@@ -34,7 +42,7 @@ import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
               <span class="icon-mask detail-icon-svg" style={`--icon-url: url('${CUSTOM_IMGS.email}')`} aria-hidden="true"></span>
             </div>
             <div>
-              <p class="detail-label">Email</p>
+              <p class="detail-label">{t('contact.email.label')}</p>
               <a href={SOCIAL_NETWORKS.email} class="detail-link email-copy" data-email="joelts159@gmail.com">
                   joelts159@gmail.com
               </a>
@@ -46,15 +54,15 @@ import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
               <span class="icon-mask detail-icon-svg" style={`--icon-url: url('${CUSTOM_IMGS.mapPin}')`} aria-hidden="true"></span>
             </div>
             <div>
-              <p class="detail-label">Ubicación</p>
-              <p class="detail-text">Quito, Ecuador</p>
+              <p class="detail-label">{t('contact.location.label')}</p>
+              <p class="detail-text">{t('contact.location')}</p>
             </div>
           </div>
         </div>
 
         <!-- SOCIAL LINKS -->
         <div>
-          <p class="social-label">También puedes encontrarme en:</p>
+          <p class="social-label">{t('contact.social.label')}</p>
           <div class="social-links">
             <a href={SOCIAL_NETWORKS.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link">
               <span class="icon-mask social-icon" style={`--icon-url: url('${CUSTOM_IMGS.github}')`} aria-hidden="true"></span>
@@ -71,7 +79,7 @@ import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
         <img
           class="contact-image"
           src={CUSTOM_IMGS.hero}
-          alt="Ilustracion de portafolio"
+          alt={t('contact.image.alt')}
           loading="lazy"
         />
       </div>
@@ -464,7 +472,7 @@ import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
 
 </style>
 
-<div class="copy-toast" id="copyToast">Copiado ✓</div>
+<div class="copy-toast" id="copyToast" data-copied={t('contact.toast.copied')}>{t('contact.toast.copied')}</div>
 
 <script>
   const emailLink = document.querySelector('.email-copy') as HTMLAnchorElement;

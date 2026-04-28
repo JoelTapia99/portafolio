@@ -1,6 +1,15 @@
 ---
 import {NavigationId} from "../constants/navigation-id.constants.ts";
 import {CUSTOM_IMGS} from "../constants/custom-imgs.constants.ts";
+import {useTranslations} from "../utils/lang.utils.ts";
+import type {Lang} from "../i18n/ui.ts";
+
+interface Props {
+    lang: Lang;
+}
+
+const {lang} = Astro.props;
+const t = useTranslations(lang);
 
 enum ICONS {
     code = "code",
@@ -12,23 +21,23 @@ enum ICONS {
 const features = [
     {
         icon: ICONS.code,
-        title: "Buenas prácticas y código Limpio",
-        description: "Escribo código mantenible y escalable enfocándome en los principios SOLID.",
+        title: t('about.feature1.title'),
+        description: t('about.feature1.description'),
     },
     {
         icon: ICONS.rocket,
-        title: "Performance",
-        description: "Optimizo mis desarrollos para obtener la mejor velocidad y experiencia de usuario.",
+        title: t('about.feature2.title'),
+        description: t('about.feature2.description'),
     },
     {
         icon: ICONS.users,
-        title: "Colaboración",
-        description: "Trabajo en equipo usando metodologías ágiles y comunicación efectiva.",
+        title: t('about.feature3.title'),
+        description: t('about.feature3.description'),
     },
     {
         icon: ICONS.zap,
-        title: "Innovación",
-        description: "Me mantengo actualizado con las últimas tecnologías y tendencias del desarrollo.",
+        title: t('about.feature4.title'),
+        description: t('about.feature4.description'),
     },
 ];
 
@@ -46,14 +55,13 @@ const icons = {
     <div class="about-container">
         <!-- SECTION HEADER -->
         <div class="section-header">
-            <span class="section-tag">Sobre mi</span>
+            <span class="section-tag">{t('about.tag')}</span>
             <h2 class="section-title">
-                Desarrollador apasionado por crear{" "}
-                <span class="text-primary">experiencias digitales</span>
+                {t('about.title')}{" "}
+                <span class="text-primary">{t('about.title.highlight')}</span>
             </h2>
             <p class="section-description">
-                Con mas de 4 años de experiencia en desarrollo web y móbil, me especializo en Angular, Laravel y React
-                Native para construir soluciones innovadoras y eficientes.
+                {t('about.description')}
             </p>
         </div>
 
@@ -62,19 +70,9 @@ const icons = {
             <div class="story-column">
                 <div class="story-card">
                     <p class="story-text">
-                        Siempre he estado fascinado por la tecnología y me gusta crear, el mundo de la programación me
-                        permite combinar ambas cosas. Mi objetivo a largo plazo es seguir aprendiendo de arquitectura y
-                        patrones de diseño de software.
+                        {t('about.story')}
                     </p>
                 </div>
-                <!--<div class="story-card">-->
-                <!--    <p class="story-text">-->
-                <!--        Actualmente me enfoco en desarrollo Full Stack con React y-->
-                <!--        Node.js, creando aplicaciones web que combinan diseno elegante-->
-                <!--        con funcionalidad robusta. Mi objetivo es siempre entregar-->
-                <!--        productos que superen las expectativas.-->
-                <!--    </p>-->
-                <!--</div>-->
             </div>
 
             <!-- Right - Features grid -->

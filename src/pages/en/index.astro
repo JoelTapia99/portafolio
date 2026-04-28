@@ -1,15 +1,15 @@
 ---
-import {METADATA} from "../constants/metadata.constants.ts";
-import {HOST_URL} from "../constants/app.constants.ts";
-import Navbar from "../components/Navbar.astro";
-import Hero from '../components/Hero.astro';
-import About from "../components/About.astro";
-import Skills from "../components/Skills.astro";
-import Timeline from "../components/Timeline.astro";
-import Projects from '../components/Projects.astro';
-import Contact from '../components/Contact.astro';
-import Footer from '../components/Footer.astro';
-import {getLangFromUrl, useTranslations} from "../utils/lang.utils.ts";
+import {HOST_URL} from "../../constants/app.constants.ts";
+import {METADATA} from "../../constants/metadata.constants.ts";
+import Navbar from "../../components/Navbar.astro";
+import Hero from '../../components/Hero.astro';
+import About from "../../components/About.astro";
+import Skills from "../../components/Skills.astro";
+import Timeline from "../../components/Timeline.astro";
+import Projects from '../../components/Projects.astro';
+import Contact from '../../components/Contact.astro';
+import Footer from '../../components/Footer.astro';
+import {getLangFromUrl, useTranslations} from "../../utils/lang.utils.ts";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -26,7 +26,7 @@ const t = useTranslations(lang);
     <!-- Open Graph -->
     <meta property='og:title' content={t('meta.title')}/>
     <meta property='og:description' content={t('meta.description')}/>
-    <meta property='og:url' content={METADATA.url}/>
+    <meta property='og:url' content={`${HOST_URL}/en`}/>
     <meta property='og:type' content={METADATA.type}/>
     <meta property='og:site_name' content={METADATA.siteName}/>
     <meta property='og:locale' content={t('meta.locale')}/>
@@ -39,7 +39,7 @@ const t = useTranslations(lang);
     <meta name="twitter:image" content={METADATA.image} />
     <meta name="twitter:image:alt" content={t('meta.imageAlt')} />
     <!-- canonical -->
-    <link rel='canonical' href={HOST_URL}/>
+    <link rel='canonical' href={`${HOST_URL}/en`}/>
 
     <title>{t('meta.title')}</title>
 </head>
@@ -127,3 +127,4 @@ const t = useTranslations(lang);
         max-width: 100%;
     }
 </style>
+

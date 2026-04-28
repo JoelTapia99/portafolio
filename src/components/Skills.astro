@@ -1,10 +1,19 @@
 ---
 import {Icon} from 'astro-icon/components';
 import {ICON} from "../enums/icon.enum.ts";
+import {useTranslations} from "../utils/lang.utils.ts";
+import type {Lang} from "../i18n/ui.ts";
+
+interface Props {
+    lang: Lang;
+}
+
+const {lang} = Astro.props;
+const t = useTranslations(lang);
 
 const skillCategories = [
     {
-        title: "Frontend",
+        title: t('skills.frontend'),
         skills: [
             {name: "TypeScript", color: "#1140ad", icon: ICON.typescript},
             {name: "Angular", color: "#e70a0a", icon: ICON.angular},
@@ -17,7 +26,7 @@ const skillCategories = [
         ],
     },
     {
-        title: "Backend",
+        title: t('skills.backend'),
         skills: [
             {name: "Java", color: "#4c7491", icon: ICON.java},
             {name: "Spring", color: "#70AD51", icon: ICON.springBoot},
@@ -28,7 +37,7 @@ const skillCategories = [
         ],
     },
     {
-        title: "Herramientas",
+        title: t('skills.tools'),
         skills: [
             {name: "Git", color: "#EE513B", icon: ICON.git},
             {name: "Github", color: "#000000", icon: ICON.github},
@@ -45,10 +54,10 @@ const skillCategories = [
     <div class="skills-container">
         <!-- Section header -->
         <div class="section-header">
-            <span class="section-tag">Habilidades</span>
-            <h2 class="section-title">Tecnologias que domino</h2>
+            <span class="section-tag">{t('skills.tag')}</span>
+            <h2 class="section-title">{t('skills.title')}</h2>
             <p class="section-description">
-                ¡Sin miedo al éxito! Con mi experiencia puedo desarrollar aplicaciones completas: bases de datos, apps móviles, aplicaciones web y soluciones backend.
+                {t('skills.description')}
             </p>
         </div>
 
